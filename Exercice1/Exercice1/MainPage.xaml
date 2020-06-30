@@ -8,9 +8,17 @@
 
     <StackLayout>
         <!-- Place new controls here -->
-        <Label Text="Welcome to Xamarin.Forms!" 
-           HorizontalOptions="Center"
-           VerticalOptions="CenterAndExpand" />
+        <Button Text="Next" Clicked="Button_Clicked"/>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Label Text="Font size: " Grid.Column="0"/>
+            <Label Text="{Binding Source={x:Reference slider}, Path=Value, StringFormat='{0}'}" Grid.Column="1"/>
+        </Grid>
+        <Slider x:Name="slider" Maximum="72" Minimum="12" />
+        <Label x:Name="lblQuotes" FontSize="{Binding Source={x:Reference slider}, Path=Value}"/>
     </StackLayout>
 
 </ContentPage>
