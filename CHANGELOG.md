@@ -1,6 +1,14 @@
 Udemy Xamarin Tutorial Implementation Change Log
 ===============================================
 
+## 2020-07-01 #1
+
+* Exercice 1 about StackLayout.  
+  Classical element stacking.
+* Exercice 2 about StackLayout.  
+  Displaying a photo filling the width while other elements have a padding.
+
+
 ## 2020-06-30 #1
 
 * Did exercice 1 about cyclic quotes app.  
