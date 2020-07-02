@@ -6,16 +6,22 @@
 			 mc:Ignorable="d"
 			 x:Class="ImageGallery.Views.MainPage" BackgroundColor="Black">
 
-	<AbsoluteLayout>
-		<Image x:Name="image"
-			   Source="https://loremflickr.com/g/320/240/paris"
-			AbsoluteLayout.LayoutBounds="0, 0, 1, 1" AbsoluteLayout.LayoutFlags="All" />
-		<ActivityIndicator Color="White" IsRunning="true"
-			AbsoluteLayout.LayoutBounds="0.5, 0.05, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional"/>
-		<Button Text="Prev"
-			AbsoluteLayout.LayoutBounds="0.05, 0.05, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional" />
-		<Button Text="next" 
-			AbsoluteLayout.LayoutBounds="0.95, 0.05, 100, 100" AbsoluteLayout.LayoutFlags="PositionProportional" />
-	</AbsoluteLayout>
+    <AbsoluteLayout>
+        <Image x:Name="image"
+			AbsoluteLayout.LayoutBounds="0, 0, 1, 1"
+            AbsoluteLayout.LayoutFlags="All" />
+        <ActivityIndicator Color="White" 
+            IsRunning="{Binding Source={x:Reference image}, Path=IsLoading}"
+			AbsoluteLayout.LayoutBounds="0.5, 0.05, 100, 100" 
+            AbsoluteLayout.LayoutFlags="PositionProportional"/>
+        <Button ImageSource="left.png"
+			AbsoluteLayout.LayoutBounds="0.05, 0.05, 100, 100" 
+           	AbsoluteLayout.LayoutFlags="PositionProportional" 
+            Clicked="Previous_Clicked"/>
+        <Button ImageSource="right.png"
+			AbsoluteLayout.LayoutBounds="0.95, 0.05, 100, 100" 
+            AbsoluteLayout.LayoutFlags="PositionProportional"
+            Clicked="Next_Clicked"/>
+    </AbsoluteLayout>
 
 </ContentPage>
