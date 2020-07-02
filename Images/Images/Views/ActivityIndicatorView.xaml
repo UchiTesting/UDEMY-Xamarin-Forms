@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:StackLayoutEx1.MarkupExtensions"
+             mc:Ignorable="d"
+             x:Class="Images.Views.ActivityIndicatorView" BackgroundColor="Black">
+    <AbsoluteLayout>
+        <Label Text="Page 1" TextColor="White"></Label>
+        <ActivityIndicator IsRunning="{Binding Source=x:Reference image}"
+                           AbsoluteLayout.LayoutBounds="0.5, 0.5,100,100"
+                           AbsoluteLayout.LayoutFlags="PositionProportional" Color="White"/>
+
+        <Image Source="https://mobimg.b-cdn.net/lwallpaper_img/landscape_by_live_wallpaper_hd_3d/real/3_landscape_by_live_wallpaper_hd_3d.jpg"
+               x:Name="image"
+               Aspect="AspectFill" 
+               AbsoluteLayout.LayoutBounds="0,0,1,1"
+               AbsoluteLayout.LayoutFlags="All"/>
+    </AbsoluteLayout>
+</ContentPage>
