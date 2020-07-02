@@ -5,11 +5,23 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Lists.Views.Basics">
-    <ListView x:Name="listView"  SeparatorColor="RoyalBlue">
+    <ListView x:Name="listView"  SeparatorColor="RoyalBlue" RowHeight="70"
+              IsGroupingEnabled="True"
+              GroupDisplayBinding="{Binding Title}"
+              GroupShortNameBinding="{Binding ShortTitle}">
         <!-- SeparatorVisibility="None" -->
         <ListView.ItemTemplate>
             <DataTemplate>
-                <ImageCell Text="{Binding Name}" Detail="{Binding Status}" ImageSource="{Binding PhotoUrl}" />
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Image Source="{Binding PhotoUrl}" BackgroundColor="Gray"/>
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding Name}" />
+                            <Label Text="{Binding Status}" TextColor="Gray"/>
+                        </StackLayout>
+                        <Button Text="Follow" />
+                    </StackLayout>
+                </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

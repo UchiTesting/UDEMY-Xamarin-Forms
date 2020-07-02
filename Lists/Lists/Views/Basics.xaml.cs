@@ -18,14 +18,22 @@ namespace Lists.Views
         {
             InitializeComponent();
 
-            var contacts = new List<Contact>
+            var contactGroups = new List<ContactGroup>
             {
-                new Contact{Name= "Maya", PhotoUrl="https://lorempixel.com/100/100/cats/1"},
-                new Contact{Name= "Cerise", PhotoUrl="https://lorempixel.com/100/100/cats/2", Status="I wantz my treatz!"},
-                new Contact{Name= "Liam", PhotoUrl="https://lorempixel.com/100/100/cats/3"}
+                new ContactGroup("My cats", "M")
+                {
+                    new Contact{Name= "Maya", PhotoUrl="https://lorempixel.com/150/150/cats/1"},
+                    new Contact{Name= "Cerise", PhotoUrl="https://lorempixel.com/150/150/cats/2", Status="I wantz my treatz!"},
+                    new Contact{Name= "Liam", PhotoUrl="https://lorempixel.com/150/150/cats/3"}
+                },
+                new ContactGroup("Your cats", "Y")
+                {
+                    new Contact{Name= "Minou", PhotoUrl="https://lorempixel.com/150/150/cats/4"},
+                    new Contact{Name= "Minette", PhotoUrl="https://lorempixel.com/150/150/cats/5"}
+                }
             };
 
-            listView.ItemsSource = contacts;
+            listView.ItemsSource = contactGroups;
         }
     }
 }
