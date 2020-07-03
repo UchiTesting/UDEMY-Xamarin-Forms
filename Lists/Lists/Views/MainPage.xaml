@@ -9,7 +9,12 @@
 
     <NavigationPage Title="Basics">
         <x:Arguments>
-            <views:Basics />
+            <views:BasicsView />
+        </x:Arguments>
+    </NavigationPage>
+    <NavigationPage Title="Ctx Act°">
+        <x:Arguments>
+            <views:ContextActionView />
         </x:Arguments>
     </NavigationPage>
 

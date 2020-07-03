@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="Lists.Views.Basics">
+             x:Class="Lists.Views.ContextActionView">
     <ListView x:Name="listView"  SeparatorColor="RoyalBlue" RowHeight="70"
               IsGroupingEnabled="True"
               GroupDisplayBinding="{Binding Title}"
@@ -23,6 +23,10 @@
                         </StackLayout>
                         <Button Text="Follow" />
                     </StackLayout>
+                    <ViewCell.ContextActions>
+                        <MenuItem Text="Love" Clicked="LoveCat_Clicked" CommandParameter="{Binding .}"/>
+                        <MenuItem Text="Cuddle" Clicked="CuddleCat_Clicked" IsDestructive="True" CommandParameter="{Binding .}"/>
+                    </ViewCell.ContextActions>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>

@@ -4,34 +4,38 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Lists.Models;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace Lists.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class BasicsView : ContentPage
+    public partial class ContextActionView : ContentPage
     {
-        ObservableCollection<Contact> Contacts { get; set; }
-        public BasicsView()
+        ObservableCollection<ContactGroup> ContactGroups { get; set; }
+        public ContextActionView()
         {
             InitializeComponent();
 
-            Contacts = new ObservableCollection<Contact>
+            ContactGroups = new ObservableCollection<ContactGroup>
             {
-
+                new ContactGroup("My cats", "M")
+                {
                     new Contact{Name= "Maya", PhotoUrl="https://lorempixel.com/150/150/cats/1"},
                     new Contact{Name= "Cerise", PhotoUrl="https://lorempixel.com/150/150/cats/2", Status="I wantz my treatz!"},
-                    new Contact{Name= "Liam", PhotoUrl="https://lorempixel.com/150/150/cats/3"},
+                    new Contact{Name= "Liam", PhotoUrl="https://lorempixel.com/150/150/cats/3"}
+                },
+                new ContactGroup("Your cats", "Y")
+                {
                     new Contact{Name= "Minou", PhotoUrl="https://lorempixel.com/150/150/cats/4"},
-                    new Contact{Name= "Minette", PhotoUrl="https://lorempixel.com/150/150/cats/5",Status="I iz cuddly."}
+                    new Contact{Name= "Minette", PhotoUrl="https://lorempixel.com/150/150/cats/5"}
+                }
             };
 
-            listView.ItemsSource = Contacts;
+            listView.ItemsSource = ContactGroups;
         }
+
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
@@ -57,10 +61,11 @@ namespace Lists.Views
         private void CuddleCat_Clicked(object sender, EventArgs e)
         {
             var cat = (sender as MenuItem).CommandParameter as Contact;
+            var group = ContactGroups.First(g => g.Contains(cat));
 
-            DisplayAlert("Cuddle cat goes to sleep now.", $"{cat.Name}", "OK");
-            Contacts.Remove(cat);
-            //listView.ItemsSource = Contacts;
+            DisplayAlert("Cuddle cat goes to sleep now.", $"{cat.Name} from group {group.Title}", "OK");
+            group.Remove(cat);
+            //listView.ItemsSource = ContactGroups; // Not good and does not work either.
         }
     }
 }

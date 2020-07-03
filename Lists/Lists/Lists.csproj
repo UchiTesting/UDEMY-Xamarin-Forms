@@ -19,10 +19,16 @@
     <Compile Update="Views\Basics.xaml.cs">
       <DependentUpon>Basics.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\ContextActionView.xaml.cs">
+      <DependentUpon>ContextActionView.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Views\Basics.xaml">
+    <EmbeddedResource Update="Views\BasicsView.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ContextActionView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
