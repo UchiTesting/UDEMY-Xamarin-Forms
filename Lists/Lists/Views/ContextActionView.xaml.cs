@@ -89,7 +89,6 @@ namespace Lists.Views
                 return new ObservableCollection<ContactGroup>(ContactGroups.Where(cg => cg.Count > 0));
 
             var tmpList = new ObservableCollection<ContactGroup>();
-            //var tmpList = new ObservableCollection<ContactGroup>(ContactGroups);
 
 
             for (int i = 0; i < ContactGroups.Count; i++)
@@ -100,8 +99,8 @@ namespace Lists.Views
 
                     var collectionGroup = new ContactGroup(ContactGroups[i].Title, ContactGroups[i].ShortTitle);
                     collectionGroup.AddRange(filteredCollection);
-
-                tmpList.Add(collectionGroup);
+                    
+                    tmpList.Add(collectionGroup);
                 }
             }
 

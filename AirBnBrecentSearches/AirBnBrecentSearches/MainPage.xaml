@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AirBnBrecentSearches.MainPage">
+
+    <StackLayout>
+        <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged" />
+        <ListView x:Name="listView"
+            HasUnevenRows="True"
+            GroupDisplayBinding="{Binding Title}"
+            GroupShortNameBinding="{Binding ShortTitle}"
+            IsGroupingEnabled="True"
+            IsPullToRefreshEnabled="True"
+            ItemSelected="ListView_ItemSelected"
+            ItemTapped="ListView_ItemTapped"
+            Refreshing="ListView_Refreshing"
+            SeparatorColor="RoyalBlue">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label Text="{Binding Location}" TextColor="RoyalBlue" />
+                            <Label Text="{Binding Dates}" TextColor="Gray" />
+                        </StackLayout>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="DESTRUCTIVE HACK!!!" Clicked="HackEntry_Clicked" CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>
