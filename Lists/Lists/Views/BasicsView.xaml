@@ -5,6 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Lists.Views.BasicsView">
+    <StackLayout>
+        <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged"/>
     <ListView x:Name="listView"  SeparatorColor="RoyalBlue" RowHeight="70"
               ItemSelected="ListView_ItemSelected"
               ItemTapped="ListView_ItemTapped">
@@ -28,4 +30,5 @@
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>
+    </StackLayout>
 </ContentPage>

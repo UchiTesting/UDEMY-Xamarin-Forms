@@ -5,7 +5,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="Lists.Views.ContextActionView">
-    <ListView x:Name="listView"  SeparatorColor="RoyalBlue" RowHeight="70"
+    <StackLayout>
+        <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged"/>
+        <ListView x:Name="listView"  SeparatorColor="RoyalBlue" RowHeight="70"
               IsGroupingEnabled="True"
               GroupDisplayBinding="{Binding Title}"
               GroupShortNameBinding="{Binding ShortTitle}"
@@ -13,24 +15,26 @@
               ItemTapped="ListView_ItemTapped"
               IsPullToRefreshEnabled="True"
               Refreshing="ListView_Refreshing">
-        <!-- SeparatorVisibility="None" -->
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation="Horizontal" Padding="5">
-                        <Image Source="{Binding PhotoUrl}" BackgroundColor="Gray"/>
-                        <StackLayout HorizontalOptions="StartAndExpand">
-                            <Label Text="{Binding Name}" />
-                            <Label Text="{Binding Status}" TextColor="Gray"/>
+            <!-- SeparatorVisibility="None" -->
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Horizontal" Padding="5">
+                            <Image Source="{Binding PhotoUrl}" BackgroundColor="Gray"/>
+                            <StackLayout HorizontalOptions="StartAndExpand">
+                                <Label Text="{Binding Name}" />
+                                <Label Text="{Binding Status}" TextColor="Gray"/>
+                            </StackLayout>
+                            <Button Text="Follow" />
                         </StackLayout>
-                        <Button Text="Follow" />
-                    </StackLayout>
-                    <ViewCell.ContextActions>
-                        <MenuItem Text="Love" Clicked="LoveCat_Clicked" CommandParameter="{Binding .}"/>
-                        <MenuItem Text="Cuddle" Clicked="CuddleCat_Clicked" IsDestructive="True" CommandParameter="{Binding .}"/>
-                    </ViewCell.ContextActions>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>
+                        <ViewCell.ContextActions>
+                            <MenuItem Text="Love" Clicked="LoveCat_Clicked" CommandParameter="{Binding .}"/>
+                            <MenuItem Text="Cuddle" Clicked="CuddleCat_Clicked" IsDestructive="True" CommandParameter="{Binding .}"/>
+                        </ViewCell.ContextActions>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
 </ContentPage>

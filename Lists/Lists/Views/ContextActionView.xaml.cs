@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Lists.Models;
+
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace Lists.Views
@@ -33,7 +37,7 @@ namespace Lists.Views
                 }
             };
 
-            listView.ItemsSource = ContactGroups;
+            listView.ItemsSource = GetGroupedList();
         }
 
 
@@ -61,11 +65,13 @@ namespace Lists.Views
         private void CuddleCat_Clicked(object sender, EventArgs e)
         {
             var cat = (sender as MenuItem).CommandParameter as Contact;
-            var group = ContactGroups.First(g => g.Contains(cat));
+            ContactGroup group = ContactGroups.First(g => g.Contains(cat));
 
             DisplayAlert("Cuddle cat goes to sleep now.", $"{cat.Name} from group {group.Title}", "OK");
             group.Remove(cat);
-            //listView.ItemsSource = ContactGroups; // Not good and does not work either.
+            // Awful code but forces the view to update.
+            listView.ItemsSource = GetGroupedList("!");
+            listView.ItemsSource = GetGroupedList();
         }
 
         private void ListView_Refreshing(object sender, EventArgs e)
@@ -77,9 +83,34 @@ namespace Lists.Views
         }
 
         // Does not work with ObservableCollection but with list the update happens.
-        private List<ContactGroup> GetGroupedList()
+        private ObservableCollection<ContactGroup> GetGroupedList(string searchedText = null)
         {
-            return ContactGroups.ToList();
+            if (string.IsNullOrWhiteSpace(searchedText))
+                return new ObservableCollection<ContactGroup>(ContactGroups.Where(cg => cg.Count > 0));
+
+            var tmpList = new ObservableCollection<ContactGroup>();
+            //var tmpList = new ObservableCollection<ContactGroup>(ContactGroups);
+
+
+            for (int i = 0; i < ContactGroups.Count; i++)
+            {
+                var filteredCollection = ContactGroups[i].FilterByName(searchedText);
+                if (filteredCollection.Count > 0)
+                {
+
+                    var collectionGroup = new ContactGroup(ContactGroups[i].Title, ContactGroups[i].ShortTitle);
+                    collectionGroup.AddRange(filteredCollection);
+
+                tmpList.Add(collectionGroup);
+                }
+            }
+
+            return tmpList;
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            listView.ItemsSource = GetGroupedList(e.NewTextValue);
         }
     }
 }

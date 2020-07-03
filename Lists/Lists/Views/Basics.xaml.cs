@@ -14,8 +14,7 @@ namespace Lists.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BasicsView : ContentPage
-    {
-        ObservableCollection<Contact> Contacts { get; set; }
+    {ObservableCollection<Contact> Contacts { get; set; }
         public BasicsView()
         {
             InitializeComponent();
@@ -30,7 +29,7 @@ namespace Lists.Views
                     new Contact{Name= "Minette", PhotoUrl="https://lorempixel.com/150/150/cats/5",Status="I iz cuddly."}
             };
 
-            listView.ItemsSource = Contacts;
+            listView.ItemsSource = GetContacts();
         }
 
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -60,7 +59,22 @@ namespace Lists.Views
 
             DisplayAlert("Cuddle cat goes to sleep now.", $"{cat.Name}", "OK");
             Contacts.Remove(cat);
-            //listView.ItemsSource = Contacts;
+            listView.ItemsSource = GetContacts();
+        }
+
+        private ObservableCollection<Contact> GetContacts(string searchText = null) {
+
+            if (string.IsNullOrWhiteSpace(searchText))
+                return Contacts;
+
+            var tmpList = new ObservableCollection<Contact>(Contacts.Where(c => c.Name.ToLower().StartsWith(searchText.ToLower())));
+
+            return tmpList;
+        }
+
+        private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            listView.ItemsSource = GetContacts(e.NewTextValue);
         }
     }
 }

@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Linq;
 using System.Text;
 
 namespace Lists.Models
@@ -13,6 +15,11 @@ namespace Lists.Models
         {
             Title = title;
             ShortTitle = shortTitle;
+        }
+
+        public ObservableCollection<Contact> FilterByName(string searchedName)
+        {
+            return new ObservableCollection<Contact>(this.Where(c => c.Name.ToLower().StartsWith(searchedName.ToLower())));
         }
     }
 }
