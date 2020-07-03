@@ -67,5 +67,19 @@ namespace Lists.Views
             group.Remove(cat);
             //listView.ItemsSource = ContactGroups; // Not good and does not work either.
         }
+
+        private void ListView_Refreshing(object sender, EventArgs e)
+        {
+            listView.ItemsSource = GetGroupedList();
+
+            //listView.IsRefreshing = false;
+            listView.EndRefresh();
+        }
+
+        // Does not work with ObservableCollection but with list the update happens.
+        private List<ContactGroup> GetGroupedList()
+        {
+            return ContactGroups.ToList();
+        }
     }
 }

@@ -10,7 +10,9 @@
               GroupDisplayBinding="{Binding Title}"
               GroupShortNameBinding="{Binding ShortTitle}"
               ItemSelected="ListView_ItemSelected"
-              ItemTapped="ListView_ItemTapped">
+              ItemTapped="ListView_ItemTapped"
+              IsPullToRefreshEnabled="True"
+              Refreshing="ListView_Refreshing">
         <!-- SeparatorVisibility="None" -->
         <ListView.ItemTemplate>
             <DataTemplate>
