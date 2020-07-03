@@ -6,12 +6,12 @@ using System.Text;
 
 namespace AirBnBrecentSearches.Models
 {
-    class RecentSearchGroup : List<SearchItem>
+    class SearchGroup : List<SearchItem>
     {
         public string Title { get; set; }
         public string ShortTitle { get; set; }
 
-        public RecentSearchGroup(string title, string shortTitle)
+        public SearchGroup(string title, string shortTitle)
         {
             Title = title;
             ShortTitle = shortTitle;

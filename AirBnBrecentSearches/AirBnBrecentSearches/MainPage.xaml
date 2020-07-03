@@ -5,9 +5,11 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AirBnBrecentSearches.MainPage">
-
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,0" />
+    </ContentPage.Padding>
     <StackLayout>
-        <SearchBar Placeholder="Search..." TextChanged="SearchBar_TextChanged" />
+        <SearchBar x:Name="searchBar" Placeholder="Search..." TextChanged="SearchBar_TextChanged" />
         <ListView x:Name="listView"
             HasUnevenRows="True"
             GroupDisplayBinding="{Binding Title}"

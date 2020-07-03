@@ -6,10 +6,11 @@ namespace AirBnBrecentSearches.Models
 {
     class SearchItem
     {
+        public int Id { get; set; }
         public string Location { get; set; }
-        public string StartDate { get; set; }
-        public string EndDate { get; set; }
+        public string CheckIn { get; set; }
+        public string CheckOut { get; set; }
 
-        public string Dates { get  => $"{StartDate} - {EndDate}";}
+        public string Dates { get  => $"{CheckIn} - {CheckOut}";}
     }
 }
