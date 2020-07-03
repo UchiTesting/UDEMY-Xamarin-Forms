@@ -35,5 +35,20 @@ namespace Lists.Views
 
             listView.ItemsSource = contactGroups;
         }
+
+        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            //listView.SelectedItem = null; // To disable selection
+
+            var contact = e.SelectedItem as Contact;
+            DisplayAlert("Selected", contact.Name, "OK");
+        }
+
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
+        {
+            var contact = e.Item as Contact;
+            DisplayAlert("Tapped", contact.Name, "OK");
+
+        }
     }
 }

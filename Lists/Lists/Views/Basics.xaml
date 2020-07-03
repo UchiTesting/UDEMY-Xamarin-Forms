@@ -8,7 +8,9 @@
     <ListView x:Name="listView"  SeparatorColor="RoyalBlue" RowHeight="70"
               IsGroupingEnabled="True"
               GroupDisplayBinding="{Binding Title}"
-              GroupShortNameBinding="{Binding ShortTitle}">
+              GroupShortNameBinding="{Binding ShortTitle}"
+              ItemSelected="ListView_ItemSelected"
+              ItemTapped="ListView_ItemTapped">
         <!-- SeparatorVisibility="None" -->
         <ListView.ItemTemplate>
             <DataTemplate>
