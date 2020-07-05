@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="LayoutsEx.Views.RelativeLayoutEx">
+    <RelativeLayout>
+        <BoxView BackgroundColor="#f7f7f7" 
+                 x:Name="topBox"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Width,
+            Factor=1
+            }"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=0.3
+            }"/>
+
+        <StackLayout          
+            RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Width,
+            Factor=0.5}"
+            
+            RelativeLayout.HeightConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Height,
+            Factor=0.3}"
+            
+            RelativeLayout.XConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Width,
+            Factor=0.25}"
+            >
+            <Label Text="$11.95" 
+                   TextColor="#33353a"
+                   FontSize="60"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+            <Button Text="Add $7.99 Credit"
+                    TextColor="White"
+                    BackgroundColor="#1695A3"
+                    CornerRadius="15"
+                    HeightRequest="30"
+                    FontSize="15"
+                    FontAttributes="Bold"/>
+        </StackLayout>
+        <StackLayout
+             RelativeLayout.YConstraint="{ConstraintExpression
+            Type=RelativeToView,
+            ElementName=topBox,
+            Property=Height,
+            Factor=1,
+            Constant=30
+            }"
+            
+            RelativeLayout.XConstraint="{ConstraintExpression
+            Type=RelativeToView,
+            ElementName=topBox,
+            Property=Width,
+            Factor=0.125}"
+            
+            RelativeLayout.WidthConstraint="{ConstraintExpression
+            Type=RelativeToParent,
+            Property=Width,
+            Factor=0.75}"            
+            >
+            <Label Text="Why pay for credit?" 
+                   FontSize="15"
+                   FontAttributes="Bold"
+                   HorizontalTextAlignment="Center"/>
+            <Label FontSize="13"
+                   HorizontalTextAlignment="Center">
+                Because you can reach people who aren't on SkyApp by calling mobile and landline numbers, or spending SMS, at low-cost rates.
+            </Label>
+        </StackLayout>
+    </RelativeLayout>
+</ContentPage>

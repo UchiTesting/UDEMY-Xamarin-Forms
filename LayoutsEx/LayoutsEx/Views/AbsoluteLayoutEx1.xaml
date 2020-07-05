@@ -36,7 +36,7 @@
             <Label FontSize="13"
                    HorizontalTextAlignment="Center">
                 Because you can reach people who aren't on SkyApp by calling mobile and landline numbers, or spending SMS, at low-cost rates.
-            </Label> />
+            </Label>
         </StackLayout>
     </AbsoluteLayout>
 </ContentView>
