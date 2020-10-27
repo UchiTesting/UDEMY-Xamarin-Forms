@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace StackLayoutEx1.iOS
+namespace LayoutEx.iOS
 {
     public class Application
     {

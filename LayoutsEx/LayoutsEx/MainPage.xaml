@@ -1,10 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:LayoutsEx"
+            xmlns:views="clr-namespace:LayoutsEx.Views"
              mc:Ignorable="d"
-             x:Class="StackLayoutEx1.MainPage"
+             x:Class="LayoutsEx.MainPage"
              BackgroundColor="#127ac7">
-
-</ContentPage>
+    <!--<views:/>-->
+    <views:AbsoluteLayoutEx2/>
+    <views:GridEx1/>
+    <views:GridEx2/>
+    <views:RelativeLayoutEx/>
+    <views:StackLayoutEx1/>
+    <views:StackLayoutEx2/>
+</CarouselPage>

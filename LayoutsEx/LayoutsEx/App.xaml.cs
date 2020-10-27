@@ -3,7 +3,7 @@
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace StackLayoutEx1
+namespace LayoutsEx
 {
     public partial class App : Application
     {
