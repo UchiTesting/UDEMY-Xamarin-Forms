@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace AirBnBrecentSearches.Models
+﻿namespace AirBnBrecentSearches.Models
 {
     class SearchItem
     {
@@ -11,6 +7,6 @@ namespace AirBnBrecentSearches.Models
         public string CheckIn { get; set; }
         public string CheckOut { get; set; }
 
-        public string Dates { get  => $"{CheckIn} - {CheckOut}";}
+        public string Dates { get => $"{CheckIn} - {CheckOut}"; }
     }
 }

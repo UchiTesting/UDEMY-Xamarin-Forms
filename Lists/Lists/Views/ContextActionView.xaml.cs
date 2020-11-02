@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections;
+﻿using Lists.Models;
+
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Lists.Models;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Internals;
 using Xamarin.Forms.Xaml;
 
 namespace Lists.Views
@@ -99,7 +94,7 @@ namespace Lists.Views
 
                     var collectionGroup = new ContactGroup(ContactGroups[i].Title, ContactGroups[i].ShortTitle);
                     collectionGroup.AddRange(filteredCollection);
-                    
+
                     tmpList.Add(collectionGroup);
                 }
             }

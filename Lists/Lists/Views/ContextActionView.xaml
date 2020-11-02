@@ -25,7 +25,7 @@
                                 <Label Text="{Binding Name}" />
                                 <Label Text="{Binding Status}" TextColor="Gray"/>
                             </StackLayout>
-                            <Button Text="Follow" />
+                            <Button Text="Follow" BackgroundColor="RoyalBlue" TextColor="WhiteSmoke"/>
                         </StackLayout>
                         <ViewCell.ContextActions>
                             <MenuItem Text="Love" Clicked="LoveCat_Clicked" CommandParameter="{Binding .}"/>

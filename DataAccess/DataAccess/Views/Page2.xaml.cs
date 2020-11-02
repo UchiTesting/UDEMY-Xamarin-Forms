@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using DataAccess.Models;
+﻿using DataAccess.Models;
 using DataAccess.Persistance;
 
 using SQLite;
+
+using System;
+using System.Collections.ObjectModel;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -45,13 +41,15 @@ namespace DataAccess.Views
             _recipes.Add(recipe);
 
         }
-        public async void OnUpdate(object sender, System.EventArgs e) { 
+        public async void OnUpdate(object sender, System.EventArgs e)
+        {
             var recipe = _recipes[0];
             recipe.Name += "UPDATED";
 
             await _connection.UpdateAsync(recipe);
         }
-        public async void OnDelete(object sender, System.EventArgs e) {
+        public async void OnDelete(object sender, System.EventArgs e)
+        {
             if (_recipes.Count <= 0) return;
 
             var recipe = _recipes[0];

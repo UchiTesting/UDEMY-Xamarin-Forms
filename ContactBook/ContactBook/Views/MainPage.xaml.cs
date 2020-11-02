@@ -1,13 +1,11 @@
-﻿using System;
-
-using System.Collections.ObjectModel;
-
-using System.Threading.Tasks;
-
-using ContactBook.Models;
+﻿using ContactBook.Models;
 using ContactBook.Persistence;
 
 using SQLite;
+
+using System;
+using System.Collections.ObjectModel;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

@@ -1,9 +1,7 @@
-﻿using System.ComponentModel;
+﻿using SQLite;
+
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
-
-using SQLite;
-
-using Xamarin.Essentials;
 
 namespace ContactBook.Models
 {
@@ -22,7 +20,8 @@ namespace ContactBook.Models
 
         #region Properties
         [PrimaryKey, AutoIncrement]
-        public int Id {
+        public int Id
+        {
             get
             {
                 return id;
@@ -36,7 +35,8 @@ namespace ContactBook.Models
             }
         }
         [MaxLength(100)]
-        public string LastName {
+        public string LastName
+        {
             get
             {
                 return lastName;
@@ -50,7 +50,8 @@ namespace ContactBook.Models
             }
         }
         [MaxLength(100)]
-        public string FirstName {
+        public string FirstName
+        {
             get
             {
                 return firstName;
@@ -63,7 +64,8 @@ namespace ContactBook.Models
                 OnPropertyChanged();
             }
         }
-        public int Age {
+        public int Age
+        {
             get
             {
                 return age;
@@ -77,7 +79,8 @@ namespace ContactBook.Models
             }
         }
         [MaxLength(20)]
-        public string Phone {
+        public string Phone
+        {
             get
             {
                 return phone;
@@ -91,7 +94,8 @@ namespace ContactBook.Models
             }
         }
         [MaxLength(100)]
-        public string Email {
+        public string Email
+        {
             get
             {
                 return email;
@@ -104,8 +108,9 @@ namespace ContactBook.Models
                 OnPropertyChanged();
             }
         }
-        public bool IsBlocked {
-            get 
+        public bool IsBlocked
+        {
+            get
             {
                 return isBlocked;
             }
@@ -120,13 +125,14 @@ namespace ContactBook.Models
         public string FullName { get => $"{FirstName} {LastName}"; }
         #endregion
 
-            #region Constructors
+        #region Constructors
         public Contact() { }
 
         #endregion
 
         #region Methods
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null){
+        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
         #endregion

@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using Lists.Models;
+
+using System;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-using Lists.Models;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -14,7 +11,8 @@ namespace Lists.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class BasicsView : ContentPage
-    {ObservableCollection<Contact> Contacts { get; set; }
+    {
+        ObservableCollection<Contact> Contacts { get; set; }
         public BasicsView()
         {
             InitializeComponent();
@@ -62,7 +60,8 @@ namespace Lists.Views
             listView.ItemsSource = GetContacts();
         }
 
-        private ObservableCollection<Contact> GetContacts(string searchText = null) {
+        private ObservableCollection<Contact> GetContacts(string searchText = null)
+        {
 
             if (string.IsNullOrWhiteSpace(searchText))
                 return Contacts;

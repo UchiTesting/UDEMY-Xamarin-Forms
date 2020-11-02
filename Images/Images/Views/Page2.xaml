@@ -13,7 +13,7 @@
                 <OnPlatform x:TypeArguments="FileImageSource"
                         iOS="clock.png"
                         Android="clock.png"
-                        />
+                />
             </Button.ImageSource>
         </Button>
     </StackLayout>

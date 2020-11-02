@@ -1,8 +1,7 @@
-﻿using System;
+﻿
+using Lists.Views;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Lists.Views;
 
 namespace Lists
 {

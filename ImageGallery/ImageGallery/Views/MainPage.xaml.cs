@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
@@ -27,7 +24,7 @@ namespace ImageGallery.Views
                 new UriImageSource{Uri=new Uri("https://loremflickr.com/320/240/cat"),CachingEnabled = false}
             };
             CurrentIndex = 0;
- 
+
 
             Console.WriteLine($"Number of items in the gallery: {webImages.Count}");
 
@@ -38,7 +35,7 @@ namespace ImageGallery.Views
 
         private void Next_Clicked(object sender, EventArgs e)
         {
-            if (CurrentIndex < webImages.Count-1)
+            if (CurrentIndex < webImages.Count - 1)
                 CurrentIndex++;
             else
                 CurrentIndex = 0;
@@ -52,7 +49,7 @@ namespace ImageGallery.Views
             if (CurrentIndex > 1)
                 CurrentIndex--;
             else
-                CurrentIndex = webImages.Count-1;
+                CurrentIndex = webImages.Count - 1;
 
             Console.WriteLine($"Current index: {CurrentIndex}");
             UpdateImage();
@@ -60,8 +57,8 @@ namespace ImageGallery.Views
 
         private void UpdateImage()
         {
-            if (CurrentIndex >= 0 && CurrentIndex <= webImages.Count-1)
-                    image.Source = webImages[CurrentIndex];
+            if (CurrentIndex >= 0 && CurrentIndex <= webImages.Count - 1)
+                image.Source = webImages[CurrentIndex];
             else
                 Console.WriteLine($"idx: {CurrentIndex}");
         }

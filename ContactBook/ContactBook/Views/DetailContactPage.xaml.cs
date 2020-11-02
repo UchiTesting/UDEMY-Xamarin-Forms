@@ -1,9 +1,9 @@
-﻿using System;
-
-using ContactBook.Models;
+﻿using ContactBook.Models;
 using ContactBook.Persistence;
 
 using SQLite;
+
+using System;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;

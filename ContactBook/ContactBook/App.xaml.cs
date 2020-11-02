@@ -1,9 +1,7 @@
-﻿using System;
+﻿
+using ContactBook.Views;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-
-using ContactBook.Views;
 
 namespace ContactBook
 {

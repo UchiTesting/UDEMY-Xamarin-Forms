@@ -16,7 +16,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Views\Basics.xaml.cs">
+    <Compile Update="Views\BasicsView.xaml.cs">
       <DependentUpon>Basics.xaml</DependentUpon>
     </Compile>
     <Compile Update="Views\ContextActionView.xaml.cs">

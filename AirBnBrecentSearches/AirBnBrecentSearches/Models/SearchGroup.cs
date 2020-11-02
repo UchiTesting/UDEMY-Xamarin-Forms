@@ -1,8 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
-using System.Text;
 
 namespace AirBnBrecentSearches.Models
 {
@@ -19,7 +17,7 @@ namespace AirBnBrecentSearches.Models
 
         public ObservableCollection<SearchItem> FilterByLocation(string searchedString)
         {
-            
+
             return new ObservableCollection<SearchItem>(this.Where(s => s.Location.ToLower().Contains(searchedString.ToLower())));
         }
     }

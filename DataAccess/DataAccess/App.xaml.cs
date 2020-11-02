@@ -1,8 +1,7 @@
-﻿using System;
+﻿
+using DataAccess.Views;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using DataAccess.Views;
 
 namespace DataAccess
 {

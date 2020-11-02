@@ -1,8 +1,7 @@
-﻿using System;
+﻿
+using ImageGallery.Views;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using ImageGallery.Views;
 
 namespace ImageGallery
 {

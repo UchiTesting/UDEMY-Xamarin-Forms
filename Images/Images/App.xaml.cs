@@ -1,8 +1,7 @@
-﻿using System;
+﻿
+using Images.Views;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
-using Images.Views;
 
 namespace Images
 {
