@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HierarchicalNavigation.Views.ModalPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="This is a modal page. Was called with PushModalAsync method."
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Label Text="Modal pages, though called in the context of Navigation have no navigation bar." />
+            <Label Text="Hence the need to explicitely add one in the XAML code." />
+            <Button Text="Back" Clicked="BackButton_Clicked"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

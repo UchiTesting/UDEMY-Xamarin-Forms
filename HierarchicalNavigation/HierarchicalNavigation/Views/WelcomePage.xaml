@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!-- 
+    To hide navigation bar add  attribute
+    NavigationPage.HasNavigationBar="false"
+    Needs to be done on every page where we want to hide it.
+-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HierarchicalNavigation.Views.WelcomePage"
+             Title="Welcome">
+
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="Welcome" HorizontalOptions="Center"/>
+        <Button Text="Introduction page" Clicked="GoToIntroPage_Clicked" />
+        <Button Text="Modal page" Clicked="GoToModalPage_Clicked" />
+    </StackLayout>
+
+</ContentPage>

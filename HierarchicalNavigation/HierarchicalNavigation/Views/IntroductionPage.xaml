@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+    Add attibute NavigationPage.HasBackButton="False" to hide the back button from navigation bar
+-->
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HierarchicalNavigation.Views.IntroductionPage"
+             NavigationPage.HasBackButton="False"
+             Title="Introduction">
+    <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <Label Text="This is how the application works." HorizontalOptions="Center"/>
+        <Button Text="Back" Clicked="BackButton_Clicked" />
+    </StackLayout>
+</ContentPage>
