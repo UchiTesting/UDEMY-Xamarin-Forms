@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:TabbedPage.Views"
+    x:Class="TabbedPage.Views.MainPage">
+    <views:Page1 Title="Page 1"/>
+    <views:Page2 Title="Page 2"/>
+    <NavigationPage Title="Nav in tabs">
+        <x:Arguments>
+            <views:Page3 />
+        </x:Arguments>
+    </NavigationPage>
+</TabbedPage>
