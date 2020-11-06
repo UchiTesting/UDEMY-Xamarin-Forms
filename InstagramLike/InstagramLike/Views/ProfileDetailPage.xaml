@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="InstagramLike.Views.ProfileDetailPage">
+    <StackLayout >
+        <Frame CornerRadius="50" IsClippedToBounds="True"
+                Padding="0" Margin="10"
+                HorizontalOptions="Center" VerticalOptions="Start"
+                HeightRequest="100" WidthRequest="100">
+            <Image Source="{Binding ImageUrl}" />
+        </Frame>
+        <Label Text="{Binding Name}"
+            VerticalOptions="Start" 
+            HorizontalOptions="CenterAndExpand" FontSize="Large" TextColor="DodgerBlue"/>
+        <Label Text="{Binding Description}" VerticalOptions="StartAndExpand" Padding="50" FontSize="Medium"/>
+    </StackLayout>
+</ContentPage>

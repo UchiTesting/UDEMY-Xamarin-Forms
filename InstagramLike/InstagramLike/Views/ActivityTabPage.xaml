@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:v="clr-namespace:InstagramLike.Views"
+                  IsPresented="True"
+             x:Class="InstagramLike.Views.ActivityTabPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Activity">
+            <ListView x:Name="notifList" ItemSelected="NotifList_ItemSelected">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" BackgroundColor="LightGray">
+                                <Frame 
+                                    CornerRadius="100" 
+                                    IsClippedToBounds="True"
+                                    Padding="0" Margin="2"
+                                    HorizontalOptions="Start"
+                       
+                                    BackgroundColor="Gray" 
+                                    BorderColor="DodgerBlue">
+
+                                    <Image x:Name="ProfilePhoto" Source="{Binding UserImage}"  Aspect="AspectFill"/>
+                                </Frame>
+                                <Label x:Name="NotificationText" Text="{Binding Message}" HorizontalOptions="StartAndExpand"/>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <ContentPage />
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
