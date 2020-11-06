@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ToolbarDemo.Views.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="New" Clicked="New_Clicked" />
+        <ToolbarItem Text="Edit" Clicked="Edit_Clicked"  Order="Primary"/>
+        <ToolbarItem Text="Delete" Clicked="Delete_Clicked" IsDestructive="True" Order="Secondary"/>
+
+    </ContentPage.ToolbarItems>
+    <Label HorizontalOptions="Center" VerticalOptions="Center" Padding="50" HorizontalTextAlignment="Center">
+        <Label.Text>
+            This is a toolbar demo for Xamarin.Forms.
+If you see no toolbar, check the App.xaml.cs file. There should be 2 lines to define the MainPage property.
+Toggle the comments to change the version to start.
+If not, you must know toolbar appear only in a NavigationPage.
+        </Label.Text>
+    </Label>
+</ContentPage>
