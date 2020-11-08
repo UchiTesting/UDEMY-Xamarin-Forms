@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FormsControls.Views.BasicControls">
+    <StackLayout>
+        <Switch IsToggled="False" Toggled="Switch_Toggled"/>
+        <Label x:Name="SwitchLabel1"  Text="Off"/>
+        <Switch x:Name="Switch2" IsToggled="False" />
+        <Label x:Name="SwitchLabel2"  Text="{Binding Source={x:Reference Switch2}, Path=IsToggled}"/>
+        <Slider x:Name="Slider" Maximum="255" Minimum="0" Value="128"/>
+        <Label Text="{Binding Source={x:Reference Slider}, Path=Value, StringFormat='{0:N0}'}" />
+        <Stepper x:Name="Stepper" Maximum="50" Minimum="0" Increment="5" Value="0" />
+        <Label Text="{Binding Source={x:Reference Stepper}, Path=Value}" />
+    </StackLayout>
+</ContentPage>
