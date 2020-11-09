@@ -6,4 +6,5 @@
     <v:BasicControls />
     <v:Entries />
     <v:Pickers />
+    <v:TableViewDemo />
 </CarouselPage>

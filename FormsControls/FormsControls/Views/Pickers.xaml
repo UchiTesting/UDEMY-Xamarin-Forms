@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:sys="clr-namespace:System;assembly=mscorlib"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FormsControls.Views.Pickers">
     <StackLayout>
@@ -14,11 +15,16 @@
             </Picker.Items>
         </Picker>
         <!--
-        With complex object we need to work on Code-behind
+        With complex object we need to work on Code-behind.
         -->
         <Picker Title="" x:Name="TonguePicker" SelectedIndexChanged="TonguePicker_SelectedIndexChanged">
 
         </Picker>
         <Label x:Name="LabelDisplay" />
+        <Label Text="Date and Time" FontSize="Large" />
+        <DatePicker Date="9 Nov 2020" MaximumDate="31 Dec 2020" MinimumDate="1 Jan 1970" Format="dd MMMM yyyy"/>
+        <TimePicker Time="19:23" />
+        <!-- I'm extatic (s:Static) about this one -->
+        <DatePicker Date="{x:Static sys:DateTime.Today}" Format="dd/MM/yyyy"/>
     </StackLayout>
 </ContentPage>

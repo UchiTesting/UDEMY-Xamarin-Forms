@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vext="clr-namespace:FormsControls.Views.Extensions"
+             x:Class="FormsControls.Views.TableViewDemo">
+    <TableView Intent="Form" HasUnevenRows="True">
+        <TableRoot>
+            <TableSection Title="Basics">
+                <TextCell Text="This is kinda a Label"  Detail="Some more text"/>
+                <EntryCell Text="Text" Label="test"  Placeholder="Any data fit here..." 
+                           Keyboard="Default" Completed="EntryCell_Completed"/>
+                <SwitchCell x:Name="Switch" Text="Switch" On="False"  OnChanged="SwitchCell_OnChanged"/>
+                <ImageCell Text="Image" ImageSource="https://lh3.googleusercontent.com/GjSjkTmQYlCAUaGt7sub6APGlRbB0brk_xqXEI4L7owXqMBT8WJeDvNAuMK2GHBPZyG66caov8aj2rMEXeMwmOr7jH4CzD5pygQv5XCc=s660" />
+            </TableSection>
+            <TableSection Title="Custom">
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Frame
+                            CornerRadius="100"
+                            IsClippedToBounds="True"
+                            Padding="0"
+                            WidthRequest="40"
+                            HeightRequest="40"
+                            HorizontalOptions="Start"
+                            >
+                            <Image 
+                                Aspect="AspectFill"
+                                Source="https://lh3.googleusercontent.com/GjSjkTmQYlCAUaGt7sub6APGlRbB0brk_xqXEI4L7owXqMBT8WJeDvNAuMK2GHBPZyG66caov8aj2rMEXeMwmOr7jH4CzD5pygQv5XCc=s660" />
+                        </Frame>
+                        <!-- Fun enough the order of padding starts at top instead of left -->
+                        <Label Text="Hello!"  VerticalOptions="Center" Padding="0, 0, 0, 10"/>
+                    </StackLayout>
+                </ViewCell>
+                <!-- We did define our own ViewCell in FormsControls.Views.Extensions namespace -->
+                <vext:DateCell Label="Start" />
+                <vext:DateCell Label="End"/>
+                <vext:DateCell Label="Default" />
+                <!-- I'm sincerely amazed to learn these things and understand more -->
+                <vext:DateCell Label="Set date" Date="9 Nov 2020" />
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
