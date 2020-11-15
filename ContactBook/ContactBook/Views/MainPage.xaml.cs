@@ -1,95 +1,92 @@
-﻿using ContactBook.Models;
-using ContactBook.Persistence;
+﻿
+using ContactBook.Models;
 
-using SQLite;
-
-using System;
 using System.Collections.ObjectModel;
-using System.Threading.Tasks;
+using System.Linq;
 
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace ContactBook.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
         private ObservableCollection<Contact> contacts;
-        private SQLiteAsyncConnection cnx;
-        private bool isDataLoaded;
+        private int counter = 0;
         public MainPage()
         {
             InitializeComponent();
-
-            cnx = DependencyService.Get<ISQLiteDb>().GetConnection();
+            contacts = new ObservableCollection<Contact>();
+            ContactList.ItemsSource = contacts;
         }
 
-        protected override async void OnAppearing()
+        private async void AddContact_Clicked(object sender, System.EventArgs e)
         {
-            if (isDataLoaded) return;
+            // Should be creating a new instance of Contact and call the ContactDetail page.
 
-            isDataLoaded = true;
+            var contact = new Contact();
 
-            await LoadData();
-
-            base.OnAppearing();
-        }
-
-        private async Task LoadData()
-        {
-            await cnx.CreateTableAsync<Contact>();
-
-            var contacts = await cnx.Table<Contact>().ToListAsync();
-
-            this.contacts = new ObservableCollection<Contact>(contacts);
-            ContactsLV.ItemsSource = this.contacts;
-        }
-
-        private async void contactsListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (ContactsLV.SelectedItem == null) return;
-
-            var selectedContact = e.SelectedItem as Contact;
-
-            ContactsLV.SelectedItem = null;
-
-            var page = new DetailContactPage(selectedContact);
-            page.ContactUpdated += (source, contact) =>
+            var page = new ContactDetail(contact);
+            page.ContactAdded += (src, c) =>
             {
-                selectedContact.Id = contact.Id;
-                selectedContact.FirstName = contact.FirstName;
-                selectedContact.LastName = contact.LastName;
-                selectedContact.Phone = contact.Phone;
-                selectedContact.Email = contact.Email;
-                selectedContact.IsBlocked = contact.IsBlocked;
-            };
+                contact.Id = ++counter;
+                contact.FirstName = c.FirstName;
+                contact.LastName = c.LastName;
+                contact.Phone = c.Phone;
+                contact.Email = c.Email;
+                contact.IsBlocked = c.IsBlocked;
 
-            await Navigation.PushAsync(page);
-        }
-
-        private async void ToolbarItem_Clicked(object sender, EventArgs e)
-        {
-            var page = new DetailContactPage(new Contact());
-
-            page.ContactAdded += (source, contact) =>
-            {
                 contacts.Add(contact);
             };
 
             await Navigation.PushAsync(page);
         }
 
-        private async void MenuItem_Clicked(object sender, EventArgs e)
+        private async void ContactList_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            var contact = (sender as MenuItem).CommandParameter as Contact;
+            if (ContactList.SelectedItem == null) return;
 
-            if (await DisplayAlert("Warning", $"Do you really want to delete {contact.FullName}?", "Yes", "No"))
+            var contact = e.SelectedItem as Contact;
+
+            var page = new ContactDetail(contact);
+
+            page.ContactUpdated += (src, c) =>
             {
-                contacts.Remove(contact);
+                var contactToUpdate = (from ct in contacts
+                                       where ct.Id == c.Id
+                                       select ct).FirstOrDefault();
 
-                await cnx.DeleteAsync(contact);
-            }
+                if (contactToUpdate != null)
+                {
+                    UpdateContactByDatatypeTransfer(contact, c);
+                    //UpdateContactByDatatypeTransfer(contactToUpdate, c);
+                    System.Console.WriteLine(contactToUpdate);
+                }
+            };
+
+            await Navigation.PushAsync(page);
+
+            ContactList.SelectedItem = null;
+
+        }
+
+        private static void UpdateContactByDatatypeTransfer(Contact contactToUpdate, Contact c)
+        {
+            contactToUpdate.Id = c.Id;
+            contactToUpdate.FirstName = c.FirstName;
+            contactToUpdate.LastName = c.LastName;
+            contactToUpdate.Phone = c.Phone;
+            contactToUpdate.Email = c.Email;
+            contactToUpdate.IsBlocked = c.IsBlocked;
+        }
+
+        private void DeleteContact_Clicked(object sender, System.EventArgs e)
+        {
+            var item = (sender as MenuItem).CommandParameter as Contact;
+            contacts.Remove(item);
+        }
+
+        private void DisplayContactDetails_Tapped(object sender, System.EventArgs e)
+        {
         }
     }
 }

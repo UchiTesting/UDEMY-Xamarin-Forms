@@ -24,7 +24,9 @@
         <Label Text="Date and Time" FontSize="Large" />
         <DatePicker Date="9 Nov 2020" MaximumDate="31 Dec 2020" MinimumDate="1 Jan 1970" Format="dd MMMM yyyy"/>
         <TimePicker Time="19:23" />
-        <!-- I'm extatic (s:Static) about this one -->
+        <TimePicker Time="19:23" Format="hh:mm"/>
+        <TimePicker Time="19:23" Format="H:mm"/>
+        <!-- I'm extatic (x:Static) about this one -->
         <DatePicker Date="{x:Static sys:DateTime.Today}" Format="dd/MM/yyyy"/>
     </StackLayout>
 </ContentPage>

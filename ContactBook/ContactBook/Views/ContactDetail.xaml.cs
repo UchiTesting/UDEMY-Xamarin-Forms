@@ -1,7 +1,4 @@
 ﻿using ContactBook.Models;
-using ContactBook.Persistence;
-
-using SQLite;
 
 using System;
 
@@ -11,18 +8,13 @@ using Xamarin.Forms.Xaml;
 namespace ContactBook.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class DetailContactPage : ContentPage
+    public partial class ContactDetail : ContentPage
     {
+
         public event EventHandler<Contact> ContactAdded;
         public event EventHandler<Contact> ContactUpdated;
-
-        private SQLiteAsyncConnection _connection;
-
-        public DetailContactPage(Contact contact)
+        public ContactDetail(Contact contact)
         {
-            if (contact == null)
-                throw new ArgumentNullException(nameof(contact));
-
             InitializeComponent();
 
             BindingContext = new Contact
@@ -33,35 +25,32 @@ namespace ContactBook.Views
                 Phone = contact.Phone,
                 Email = contact.Email,
                 IsBlocked = contact.IsBlocked
-            };
 
-            _connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+            };
         }
 
-        async void OnSave(object sender, System.EventArgs e)
+        private async void SaveButton_Clicked(object sender, EventArgs e)
         {
             var contact = BindingContext as Contact;
 
-            if (String.IsNullOrWhiteSpace(contact.FullName))
+            if (!(!string.IsNullOrWhiteSpace(contact.FirstName) || !string.IsNullOrWhiteSpace(contact.LastName)))
             {
-                await DisplayAlert("Error", "Firstname and lastname can't be empty.", "OK");
+                await DisplayAlert("Invalid data", "Either the first or last name must be filled", "OK");
                 return;
             }
 
+            Console.WriteLine("Contact info: " + contact);
+
             if (contact.Id == 0)
             {
-                await _connection.InsertAsync(contact);
-
                 ContactAdded?.Invoke(this, contact);
             }
             else
             {
-                await _connection.UpdateAsync(contact);
-
                 ContactUpdated?.Invoke(this, contact);
             }
 
-            await Navigation.PopAsync();
+            Navigation.PopAsync();
         }
     }
 }

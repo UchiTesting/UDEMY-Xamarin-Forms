@@ -3,7 +3,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{EA475650-CBD6-4F04-83F1-E85844273356}</ProjectGuid>
+    <ProjectGuid>{87E0E529-8A78-4F43-BA78-8248EF87045B}</ProjectGuid>
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <TemplateGuid>{c9e5eea5-ca05-42a1-839b-61506e0a37df}</TemplateGuid>
     <OutputType>Library</OutputType>
@@ -54,12 +54,11 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1534" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
-    <Compile Include="Persistence\SQLiteDb.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -91,14 +90,14 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ContactBook\ContactBook.csproj">
-      <Project>{01D51411-DC60-44AA-BC41-BE3505CF8688}</Project>
+      <Project>{E800048F-24A6-4450-B3F5-31CD2155651B}</Project>
       <Name>ContactBook</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <ProjectExtensions>
     <VisualStudio>
-      <UserProperties XamarinHotReloadDebuggerTimeoutExceptionContactBookAndroidHideInfoBar="True" />
+      <UserProperties TriggeredFromHotReload="False" />
     </VisualStudio>
   </ProjectExtensions>
 </Project>

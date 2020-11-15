@@ -1,31 +1,20 @@
-﻿using SQLite;
-
-using System.ComponentModel;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
 namespace ContactBook.Models
 {
     public class Contact : INotifyPropertyChanged
     {
-        #region Fields
-        public event PropertyChangedEventHandler PropertyChanged;
-        int id;
-        string firstName;
-        string lastName;
-        int age;
-        string phone;
-        string email;
-        bool isBlocked;
-        #endregion
+        private int id;
+        private string firstName;
+        private string lastName;
+        private string phone;
+        private string email;
+        private bool isBlocked;
 
-        #region Properties
-        [PrimaryKey, AutoIncrement]
         public int Id
         {
-            get
-            {
-                return id;
-            }
+            get => id;
             set
             {
                 if (value == id) return;
@@ -34,57 +23,35 @@ namespace ContactBook.Models
                 OnPropertyChanged();
             }
         }
-        [MaxLength(100)]
-        public string LastName
-        {
-            get
-            {
-                return lastName;
-            }
-            set
-            {
-                if (value == lastName) return;
-
-                lastName = value;
-                OnPropertyChanged();
-            }
-        }
-        [MaxLength(100)]
         public string FirstName
         {
-            get
-            {
-                return firstName;
-            }
+            get => firstName;
             set
             {
                 if (value == firstName) return;
 
                 firstName = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(FullName));
             }
         }
-        public int Age
+
+        public string FullName => $"{FirstName} {LastName}";
+        public string LastName
         {
-            get
-            {
-                return age;
-            }
+            get => lastName;
             set
             {
-                if (value == age) return;
+                if (value == lastName) return;
 
-                age = value;
+                lastName = value;
                 OnPropertyChanged();
+                OnPropertyChanged(nameof(FullName));
             }
         }
-        [MaxLength(20)]
         public string Phone
         {
-            get
-            {
-                return phone;
-            }
+            get => phone;
             set
             {
                 if (value == phone) return;
@@ -93,13 +60,9 @@ namespace ContactBook.Models
                 OnPropertyChanged();
             }
         }
-        [MaxLength(100)]
         public string Email
         {
-            get
-            {
-                return email;
-            }
+            get => email;
             set
             {
                 if (value == email) return;
@@ -110,10 +73,7 @@ namespace ContactBook.Models
         }
         public bool IsBlocked
         {
-            get
-            {
-                return isBlocked;
-            }
+            get => isBlocked;
             set
             {
                 if (value == isBlocked) return;
@@ -122,19 +82,17 @@ namespace ContactBook.Models
                 OnPropertyChanged();
             }
         }
-        public string FullName { get => $"{FirstName} {LastName}"; }
-        #endregion
 
-        #region Constructors
-        public Contact() { }
+        public event PropertyChangedEventHandler PropertyChanged;
 
-        #endregion
-
-        #region Methods
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        public void OnPropertyChanged([CallerMemberName] string property = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
-        #endregion
+
+        public override string ToString()
+        {
+            return $"{Id} {FirstName} {LastName} {Phone} {Email} {IsBlocked}";
+        }
     }
 }
