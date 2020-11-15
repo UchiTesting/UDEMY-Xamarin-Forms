@@ -145,7 +145,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstagramLike.iOS", "Instag
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstagramLike", "InstagramLike\InstagramLike\InstagramLike.csproj", "{FC87BED0-2BFE-40A7-83BE-C46CAF372031}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Forms", "Forms", "{0F40E47C-2B09-40BF-BDD8-6033F9BA1F70}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7 Forms", "7 Forms", "{0F40E47C-2B09-40BF-BDD8-6033F9BA1F70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsControls.Android", "FormsControls\FormsControls.Android\FormsControls.Android.csproj", "{E452FF8E-DEE3-4496-BAEA-5FF138CEB827}"
 EndProject
@@ -157,7 +157,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook.Android", "Cont
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook.iOS", "ContactBook\ContactBook.iOS\ContactBook.iOS.csproj", "{DD8DC872-38E8-4ADE-8CE9-BE746585CFA3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook", "ContactBook\ContactBook\ContactBook.csproj", "{8E305BB1-1CB1-40E8-AD57-2DB759C8B3F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBook", "ContactBook\ContactBook\ContactBook.csproj", "{8E305BB1-1CB1-40E8-AD57-2DB759C8B3F0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

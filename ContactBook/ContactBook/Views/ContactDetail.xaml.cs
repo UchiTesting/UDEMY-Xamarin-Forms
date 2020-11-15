@@ -33,7 +33,8 @@ namespace ContactBook.Views
         {
             var contact = BindingContext as Contact;
 
-            if (!(!string.IsNullOrWhiteSpace(contact.FirstName) || !string.IsNullOrWhiteSpace(contact.LastName)))
+            //if (!(!string.IsNullOrWhiteSpace(contact.FirstName) || !string.IsNullOrWhiteSpace(contact.LastName)))
+            if (string.IsNullOrWhiteSpace(contact.FirstName) && string.IsNullOrWhiteSpace(contact.LastName))
             {
                 await DisplayAlert("Invalid data", "Either the first or last name must be filled", "OK");
                 return;
