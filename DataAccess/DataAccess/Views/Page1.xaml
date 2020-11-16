@@ -7,8 +7,12 @@
              x:Class="DataAccess.Views.Page1">
     <TableView>
         <TableSection>
-            <EntryCell x:Name="title" Text="{Binding Title}" Label="Title" Placeholder="Title" />
-            <SwitchCell x:Name="notificationEnabled" Text="Notification" On="{Binding NotificationsEnabled}" />
+            <EntryCell x:Name="Title" Text="{Binding Title}" Label="Title" 
+                Placeholder="Title" />
+            <!-- Without binding we would use event handlers. It becomes useless thanks to data binding -->
+            <!--Placeholder="Title" Completed="title_Completed"/>-->
+            <!--<SwitchCell x:Name="NotificationEnabled" Text="Notification" On="{Binding NotificationsEnabled}" OnChanged="NotificationEnabled_OnChanged"/>-->
+            <SwitchCell x:Name="NotificationEnabled" Text="Notification" On="{Binding NotificationsEnabled}"/>
         </TableSection>
     </TableView>
 </ContentPage>

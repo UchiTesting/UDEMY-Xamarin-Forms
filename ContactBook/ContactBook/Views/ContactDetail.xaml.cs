@@ -51,7 +51,7 @@ namespace ContactBook.Views
                 ContactUpdated?.Invoke(this, contact);
             }
 
-            Navigation.PopAsync();
+            await Navigation.PopAsync();
         }
     }
 }
