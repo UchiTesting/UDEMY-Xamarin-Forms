@@ -28,30 +28,50 @@ namespace Contact_Book_with_SQLite
 				contacts.Remove(contact);
 		}
 
-		private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+		private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
 		{
 			if (ContactList.SelectedItem == null) return;
 
 			var contact = e.SelectedItem as Contact;
 
-			DisplayAlert("", $"contact selected\n{contact.Id} {contact.FullName}", "OK");
+			var page = new Views.ContactDetail(contact);
+			page.ContactUpdated += (src, c) =>
+			{
+				UpdateContactByDatatypeTransfer(contact, c);
+			};
+
+			await Navigation.PushAsync(page);
 
 			ContactList.SelectedItem = null;
 
 		}
 
-		private void AddContact_Clicked(object sender, EventArgs e)
+		private async void AddContact_Clicked(object sender, EventArgs e)
 		{
-			var contact = new Contact
+			var contact = new Contact();
+
+			var page = new Views.ContactDetail(contact);
+
+			page.ContactAdded += (src, c) =>
 			{
-				Id = ++counter,
-				FirstName = GenerateRandomString(),
-				LastName = GenerateRandomString(),
-				Phone = GenerateRandomPhone(),
-				Email = GenerateRandomEmail()
+				UpdateContactByDatatypeTransfer(contact, c);
+
+				contact.Id = ++counter;
+				contacts.Add(contact);
 			};
 
-			contacts.Add(contact);
+			await Navigation.PushAsync(page);
+
+		}
+
+		private static void UpdateContactByDatatypeTransfer(Contact contactToUpdate, Contact c)
+		{
+			contactToUpdate.Id = c.Id;
+			contactToUpdate.FirstName = c.FirstName;
+			contactToUpdate.LastName = c.LastName;
+			contactToUpdate.Phone = c.Phone;
+			contactToUpdate.Email = c.Email;
+			contactToUpdate.IsBlocked = c.IsBlocked;
 		}
 
 		private string GenerateRandomPhone()

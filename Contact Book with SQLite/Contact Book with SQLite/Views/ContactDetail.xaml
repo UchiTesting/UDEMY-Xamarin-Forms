@@ -5,15 +5,19 @@
     <TableView>
         <TableRoot>
             <TableSection Title="Identity">
-                <TextCell Text="FirstName" Detail="First name" />
-                <TextCell Text="LastName" Detail="Last name" />
+                <EntryCell x:Name="FirstNameEntry" Text="{Binding FirstName}" Label="First name" />
+                <EntryCell x:Name="LastNameEntry" Text="{Binding LastName}" Label="Last name" />
             </TableSection>
             <TableSection Title="Contact">
-                <TextCell Text="Phone" Detail="Phone" />
-                <TextCell Text="Email" Detail="Email" />
+                <EntryCell Text="{Binding Phone}" Label="Phone" />
+                <EntryCell Text="{Binding Email}" Label="Email" />
             </TableSection>
             <TableSection Title="Other">
-                <SwitchCell Text="Blocked"  On="False"/>
+                <SwitchCell Text="Blocked"  On="{Binding IsBlocked}"/>
+                <TextCell Text="{Binding Id}" Detail="ID"/>
+                <ViewCell>
+                    <Button Text="Save" Clicked="SaveContactData_Clicked" HorizontalOptions="Center"/>
+                </ViewCell>
             </TableSection>
         </TableRoot>
     </TableView>

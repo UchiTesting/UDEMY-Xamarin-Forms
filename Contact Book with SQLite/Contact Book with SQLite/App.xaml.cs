@@ -10,8 +10,8 @@ namespace Contact_Book_with_SQLite
 			InitializeComponent();
 
 			// NavigationPage is needed in order to see the toolbar.
-			MainPage = new NavigationPage(new Views.ContactDetail());
-			//MainPage = new NavigationPage(new MainPage());
+			//MainPage = new NavigationPage(new Views.ContactDetail());
+			MainPage = new NavigationPage(new MainPage());
 		}
 
 		protected override void OnStart()

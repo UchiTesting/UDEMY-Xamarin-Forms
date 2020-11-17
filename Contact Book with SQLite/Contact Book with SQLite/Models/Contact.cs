@@ -84,6 +84,21 @@ namespace Contact_Book_with_SQLite.Models
 			}
 		}
 
+		private bool isBlocked;
+		public bool IsBlocked
+		{
+			get => isBlocked;
+			set
+			{
+				if (value != isBlocked)
+				{
+					isBlocked = value;
+
+					OnPropertyChanged();
+				}
+			}
+		}
+
 		public void OnPropertyChanged([CallerMemberName] string propertyName = null)
 		{
 			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
