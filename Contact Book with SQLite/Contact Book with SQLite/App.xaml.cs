@@ -1,7 +1,5 @@
-﻿using System;
-
+﻿
 using Xamarin.Forms;
-using Xamarin.Forms.Xaml;
 
 namespace Contact_Book_with_SQLite
 {
@@ -11,7 +9,9 @@ namespace Contact_Book_with_SQLite
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			// NavigationPage is needed in order to see the toolbar.
+			MainPage = new NavigationPage(new Views.ContactDetail());
+			//MainPage = new NavigationPage(new MainPage());
 		}
 
 		protected override void OnStart()

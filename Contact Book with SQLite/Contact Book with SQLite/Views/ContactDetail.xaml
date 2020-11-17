@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Contact_Book_with_SQLite.Views.ContactDetail">
+    <TableView>
+        <TableRoot>
+            <TableSection Title="Identity">
+                <TextCell Text="FirstName" Detail="First name" />
+                <TextCell Text="LastName" Detail="Last name" />
+            </TableSection>
+            <TableSection Title="Contact">
+                <TextCell Text="Phone" Detail="Phone" />
+                <TextCell Text="Email" Detail="Email" />
+            </TableSection>
+            <TableSection Title="Other">
+                <SwitchCell Text="Blocked"  On="False"/>
+            </TableSection>
+        </TableRoot>
+    </TableView>
+</ContentPage>
