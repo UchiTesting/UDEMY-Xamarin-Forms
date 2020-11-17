@@ -21,4 +21,9 @@
             <views:Page3 />
         </x:Arguments>
     </NavigationPage>
+    <NavigationPage Title="File system">
+        <x:Arguments>
+            <views:Page4 />
+        </x:Arguments>
+    </NavigationPage>
 </TabbedPage>
