@@ -5,51 +5,51 @@ using System.Runtime.CompilerServices;
 
 namespace DataAccess.Models
 {
-    [Table("Recipes")]
-    class Recipe : INotifyPropertyChanged
-    {
-        #region Private members
-        private int _id;
-        private string _name;
-        #endregion
+	[Table("Recipes")]
+	class Recipe : INotifyPropertyChanged
+	{
+		#region Private members
+		private int _id;
+		private string _name;
+		#endregion
 
-        [PrimaryKey, AutoIncrement, Column("RecipeId")]
-        public int Id
-        {
-            get
-            {
-                return _id;
-            }
-            set
-            {
-                if (value == _id) return;
+		[PrimaryKey, AutoIncrement, Column("RecipeId")]
+		public int Id
+		{
+			get
+			{
+				return _id;
+			}
+			set
+			{
+				if (value == _id) return;
 
-                _id = value;
-                OnPropertyChanged();
-            }
-        }
-        [MaxLength(255)]
-        public string Name
-        {
-            get
-            {
-                return _name;
-            }
-            set
-            {
-                if (value == _name) return;
+				_id = value;
+				OnPropertyChanged();
+			}
+		}
+		[MaxLength(255)]
+		public string Name
+		{
+			get
+			{
+				return _name;
+			}
+			set
+			{
+				if (value == _name) return;
 
-                _name = value;
+				_name = value;
 
-                OnPropertyChanged();
-            }
-        }
+				OnPropertyChanged();
+			}
+		}
 
-        public event PropertyChangedEventHandler PropertyChanged;
+		public event PropertyChangedEventHandler PropertyChanged;
 
-        private void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-        }
-    }
+		private void OnPropertyChanged([CallerMemberName] string propertyName = null)
+		{
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+		}
+	}
 }

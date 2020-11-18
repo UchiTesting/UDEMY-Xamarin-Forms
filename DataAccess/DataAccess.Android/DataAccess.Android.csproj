@@ -74,7 +74,7 @@
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="Persistance\FileSystem.cs" />
-    <Compile Include="Persistance\SQLiteDb.cs" />
+    <Compile Include="Persistance\SQLiteDB.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

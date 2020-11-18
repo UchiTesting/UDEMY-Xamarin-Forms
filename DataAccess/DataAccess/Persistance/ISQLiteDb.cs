@@ -2,9 +2,9 @@
 
 namespace DataAccess.Persistance
 {
-    public interface ISQLiteDb
-    {
-        SQLiteAsyncConnection GetConnection();
-    }
+	public interface ISQLiteDB
+	{
+		SQLiteAsyncConnection GetConnection();
+	}
 }
 

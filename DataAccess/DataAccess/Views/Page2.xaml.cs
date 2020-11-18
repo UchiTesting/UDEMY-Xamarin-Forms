@@ -20,7 +20,7 @@ namespace DataAccess.Views
 		{
 			InitializeComponent();
 
-			_connection = DependencyService.Get<ISQLiteDb>().GetConnection();
+			_connection = DependencyService.Get<ISQLiteDB>().GetConnection();
 		}
 
 		protected override async void OnAppearing()

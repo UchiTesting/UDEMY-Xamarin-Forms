@@ -19,7 +19,7 @@
                             Text="Delete" 
                             IsDestructive="True" 
                             CommandParameter="{Binding .}" 
-                            Clicked="DeleteContact_Clicked"/>
+                            Clicked="DeleteContact_ClickedAsync"/>
                     </ViewCell.ContextActions>
                 </ViewCell>
 

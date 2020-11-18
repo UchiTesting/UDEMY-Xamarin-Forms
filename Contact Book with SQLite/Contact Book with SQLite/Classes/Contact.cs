@@ -1,8 +1,11 @@
-﻿using System.ComponentModel;
+﻿using SQLite;
+
+using System.ComponentModel;
 using System.Runtime.CompilerServices;
 
-namespace Contact_Book_with_SQLite.Models
+namespace Contact_Book_with_SQLite.Classes
 {
+	[Table("Contacts")]
 	public class Contact : INotifyPropertyChanged
 	{
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -10,6 +13,7 @@ namespace Contact_Book_with_SQLite.Models
 		private int id;
 
 		// Implemented with guard clause. Less nesting.
+		[PrimaryKey, AutoIncrement, Column("ContactId")]
 		public int Id
 		{
 			get => id;
@@ -25,6 +29,7 @@ namespace Contact_Book_with_SQLite.Models
 		private string firstName;
 
 		// Implemented as seen on MSDN. More nesting which means Robert C. Martin would kick some *ss, but simpler.
+		[MaxLength(50)]
 		public string FirstName
 		{
 			get => firstName;
@@ -40,6 +45,7 @@ namespace Contact_Book_with_SQLite.Models
 			}
 		}
 		private string lastName;
+		[MaxLength(50)]
 		public string LastName
 		{
 			get => lastName;
@@ -56,6 +62,8 @@ namespace Contact_Book_with_SQLite.Models
 		}
 		public string FullName => $"{FirstName} {LastName}";
 		private string phone;
+
+		[MaxLength(15)]
 		public string Phone
 		{
 			get => phone;
@@ -70,6 +78,7 @@ namespace Contact_Book_with_SQLite.Models
 			}
 		}
 		private string email;
+		[MaxLength(100)]
 		public string Email
 		{
 			get => email;
@@ -87,6 +96,7 @@ namespace Contact_Book_with_SQLite.Models
 		private bool isBlocked;
 		public bool IsBlocked
 		{
+
 			get => isBlocked;
 			set
 			{

@@ -54,10 +54,14 @@
     <Reference Include="System.Numerics.Vectors" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.7.335</Version>
+    </PackageReference>
     <PackageReference Include="Xamarin.Forms" Version="4.8.0.1451" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\SQLiteDB.cs" />
     <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,7 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Contact Book with SQLite\Contact Book with SQLite.csproj">
-      <Project>{4A0306E4-AB32-4239-B3AD-23524B9E6525}</Project>
+      <Project>{e62bc4fd-6269-4ab4-9389-9a48fecbf902}</Project>
       <Name>Contact Book with SQLite</Name>
     </ProjectReference>
   </ItemGroup>

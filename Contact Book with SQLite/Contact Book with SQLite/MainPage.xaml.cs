@@ -1,4 +1,6 @@
-﻿using Contact_Book_with_SQLite.Models;
+﻿using Contact_Book_with_SQLite.Classes;
+
+using SQLite;
 
 using System;
 using System.Collections.ObjectModel;
@@ -11,21 +13,36 @@ namespace Contact_Book_with_SQLite
 	public partial class MainPage : ContentPage
 	{
 		private ObservableCollection<Contact> contacts;
-		private int counter;
+		//private int counter;
+		private readonly SQLiteAsyncConnection cnx;
+
 		public MainPage()
 		{
 			InitializeComponent();
-			contacts = new ObservableCollection<Contact>();
-			counter = 0;
 
-			ContactList.ItemsSource = contacts;
+			//counter = 0;
+			cnx = DependencyService.Get<ISQLiteBDD>().GetConnection();
 		}
 
-		private void DeleteContact_Clicked(object sender, EventArgs e)
+		protected async override void OnAppearing()
+		{
+			await cnx.CreateTableAsync<Contact>();
+			var contactsFromDB = await cnx.Table<Contact>().ToListAsync();
+			contacts = new ObservableCollection<Contact>(contactsFromDB);
+			ContactList.ItemsSource = contacts;
+
+
+			base.OnAppearing();
+		}
+
+		private async void DeleteContact_ClickedAsync(object sender, EventArgs e)
 		{
 			var contact = (sender as MenuItem).CommandParameter as Contact;
 			if (contacts.Contains(contact))
+			{
+				await cnx.DeleteAsync(contact);
 				contacts.Remove(contact);
+			}
 		}
 
 		private async void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -35,9 +52,10 @@ namespace Contact_Book_with_SQLite
 			var contact = e.SelectedItem as Contact;
 
 			var page = new Views.ContactDetail(contact);
-			page.ContactUpdated += (src, c) =>
+			page.ContactUpdated += async (src, c) =>
 			{
 				UpdateContactByDatatypeTransfer(contact, c);
+				await cnx.UpdateAsync(contact);
 			};
 
 			await Navigation.PushAsync(page);
@@ -52,11 +70,13 @@ namespace Contact_Book_with_SQLite
 
 			var page = new Views.ContactDetail(contact);
 
-			page.ContactAdded += (src, c) =>
+			page.ContactAdded += async (src, c) =>
 			{
 				UpdateContactByDatatypeTransfer(contact, c);
 
-				contact.Id = ++counter;
+				//contact.Id = ++counter;
+
+				await cnx.InsertAsync(contact);
 				contacts.Add(contact);
 			};
 

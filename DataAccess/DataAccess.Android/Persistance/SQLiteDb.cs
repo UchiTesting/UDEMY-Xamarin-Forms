@@ -12,15 +12,15 @@ using Xamarin.Forms;
 
 namespace DataAccess.Droid.Persistance
 {
-    public class SQLiteDb : ISQLiteDb
-    {
-        public SQLiteAsyncConnection GetConnection()
-        {
-            var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
-            var path = Path.Combine(documentsPath, "MySQLite.db3");
+	public class SQLiteDb : ISQLiteDB
+	{
+		public SQLiteAsyncConnection GetConnection()
+		{
+			var documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments);
+			var path = Path.Combine(documentsPath, "MySQLite.db3");
 
-            return new SQLiteAsyncConnection(path);
-        }
-    }
+			return new SQLiteAsyncConnection(path);
+		}
+	}
 }
 

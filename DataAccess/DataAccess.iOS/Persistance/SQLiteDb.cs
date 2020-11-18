@@ -12,7 +12,7 @@ using Xamarin.Forms;
 
 namespace DataAccess.iOS.Persistance
 {
-	public class SQLiteDb : ISQLiteDb
+	public class SQLiteDb : ISQLiteDB
 	{
 		public SQLiteAsyncConnection GetConnection()
 		{
