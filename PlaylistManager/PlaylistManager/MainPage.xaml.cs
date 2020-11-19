@@ -1,7 +1,8 @@
-﻿using PlaylistManager.Models;
+﻿using PlaylistManager.Classes;
 using PlaylistManager.VMs;
 
 using System;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
@@ -11,7 +12,7 @@ namespace PlaylistManager
 	{
 		public MainPage()
 		{
-			BindingContext = new MainPageVM();
+			BindingContext = new MainPageVM(new PageService());
 
 			InitializeComponent();
 		}
@@ -24,7 +25,7 @@ namespace PlaylistManager
 		private void AddPlaylist_Clicked(object sender, EventArgs e)
 			=> (BindingContext as MainPageVM).AddPlayList();
 
-		private void PlaylistItem_Tapped(object sender, ItemTappedEventArgs e)
-			=> (BindingContext as MainPageVM).PlaylistTapped(e.Item as PlayListVM);
+		private async void PlaylistItem_Tapped(object sender, ItemTappedEventArgs e)
+			=> await (BindingContext as MainPageVM).PlaylistTapped(e.Item as PlayListVM);
 	}
 }
