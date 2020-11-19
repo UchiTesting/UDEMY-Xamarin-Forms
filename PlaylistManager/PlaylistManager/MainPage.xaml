@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="{Binding Path=PlayLists.Count,StringFormat='{0} playlists'}"
+             x:Class="PlaylistManager.MainPage">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddPlaylist_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ListView 
+        ItemsSource="{Binding PlayLists}" 
+        ItemTapped="PlaylistItem_Tapped"
+        SelectedItem="{Binding SelectedPlaylist, Mode=TwoWay}">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <TextCell 
+                    Text="{Binding Title}" 
+                    Detail="{Binding IsFavourited, StringFormat='Favourite: {0}'}"
+                    TextColor="{Binding Colour}" 
+                    />
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+
+</ContentPage>
