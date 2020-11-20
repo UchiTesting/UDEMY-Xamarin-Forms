@@ -15,15 +15,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Course codes", "Course code
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LuckyNumber", "LuckyNumber\LuckyNumber\LuckyNumber.csproj", "{2CA3B356-7D2F-4DD5-B3DC-6BD7EA3D2BFD}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Quotes", "1 Quotes", "{7386F6CF-9986-46E2-848F-B897C25DF478}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Quotes", "01 Quotes", "{7386F6CF-9986-46E2-848F-B897C25DF478}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 Lucky Number", "1 Lucky Number", "{7EDE41A1-943A-4C6D-A2E7-8E3271B2FD94}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01 Lucky Number", "01 Lucky Number", "{7EDE41A1-943A-4C6D-A2E7-8E3271B2FD94}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuckyNumber.Android", "LuckyNumber\LuckyNumber.Android\LuckyNumber.Android.csproj", "{6D394FAC-2CDB-439E-8C41-D7EF55262805}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LuckyNumber.iOS", "LuckyNumber\LuckyNumber.iOS\LuckyNumber.iOS.csproj", "{EA9797C5-2F73-483B-BDF5-B48BA6CD5C7B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Layouts", "2 Layouts", "{6596D60E-4AD5-4D6B-A209-304E4E6780E0}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Layouts", "02 Layouts", "{6596D60E-4AD5-4D6B-A209-304E4E6780E0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{C2FEAE67-8801-407B-8A49-A00DE12BFE8B}"
 	ProjectSection(SolutionItems) = preProject
@@ -31,7 +31,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 Images", "2 Images", "{F9E50C93-37B9-42CA-B38C-04E389E141B5}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02 Images", "02 Images", "{F9E50C93-37B9-42CA-B38C-04E389E141B5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Images.Android", "Images\Images.Android\Images.Android.csproj", "{0AD3E7CF-C9C7-45A1-BC3F-7CBBA7A57B63}"
 EndProject
@@ -39,7 +39,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Images.iOS", "Images\Images
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Images", "Images\Images\Images.csproj", "{67255704-A114-432D-BF90-17DE8B73EE03}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 Images", "4 Images", "{5395DBD1-54C7-4EB1-8691-A0E0789A02F4}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04 Images", "04 Images", "{5395DBD1-54C7-4EB1-8691-A0E0789A02F4}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGallery.Android", "ImageGallery\ImageGallery.Android\ImageGallery.Android.csproj", "{F138F2C0-B0F8-47BD-A5DF-199F645CE663}"
 EndProject
@@ -47,7 +47,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ImageGallery.iOS", "ImageGa
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ImageGallery", "ImageGallery\ImageGallery\ImageGallery.csproj", "{2FD40EA7-9EF0-4C03-9274-705B16F44A6B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 Lists", "3 Lists", "{E5CA1DDA-C46E-4DDA-A9FD-643226682C0D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03 Lists", "03 Lists", "{E5CA1DDA-C46E-4DDA-A9FD-643226682C0D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lists.Android", "Lists\Lists.Android\Lists.Android.csproj", "{38F72A86-6622-467C-AC05-CEE423D87AD5}"
 EndProject
@@ -55,7 +55,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lists.iOS", "Lists\Lists.iO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Lists", "Lists\Lists\Lists.csproj", "{051774CA-6A89-4416-9A83-82EB3C641CD0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5 Lists", "5 Lists", "{FAB94CAA-9860-4B4B-A19B-C0A9ED8C528D}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "05 Lists", "05 Lists", "{FAB94CAA-9860-4B4B-A19B-C0A9ED8C528D}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AirBnBrecentSearches.Android", "AirBnBrecentSearches\AirBnBrecentSearches.Android\AirBnBrecentSearches.Android.csproj", "{337CC17A-5445-4D0A-9F50-B7BD9CB481CF}"
 EndProject
@@ -69,9 +69,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutsEx.Android", "Layout
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LayoutsEx.iOS", "LayoutsEx\LayoutsEx.iOS\LayoutsEx.iOS.csproj", "{B3C1B1B1-5330-487E-80A7-D902FC1A7EED}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8 Data Access", "8 Data Access", "{7E96AE1C-9B53-4125-ABBA-CF6EFC2866EC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08 Data Access", "08 Data Access", "{7E96AE1C-9B53-4125-ABBA-CF6EFC2866EC}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7 Forms Settings", "7 Forms Settings", "{EFB6DB9B-F191-4FEF-8033-184C6FEB0B22}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 Forms Settings", "07 Forms Settings", "{EFB6DB9B-F191-4FEF-8033-184C6FEB0B22}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.Android", "DataAccess\DataAccess.Android\DataAccess.Android.csproj", "{01A81AE3-40A1-4849-9F39-9462EB75799F}"
 EndProject
@@ -79,7 +79,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess.iOS", "DataAcces
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataAccess", "DataAccess\DataAccess\DataAccess.csproj", "{0FEE46C4-DF23-4287-88FE-45D93917CA0C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 Navigation", "6 Navigation", "{B34A9192-CD06-4F3F-BBA4-09463F1F088B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 Navigation", "06 Navigation", "{B34A9192-CD06-4F3F-BBA4-09463F1F088B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MasterDetail.Android", "MasterDetail\MasterDetail.Android\MasterDetail.Android.csproj", "{AA71B099-5561-49A3-9A62-92ACC2E0AED3}"
 EndProject
@@ -137,7 +137,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToolbarDemo.iOS", "ToolbarD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ToolbarDemo", "ToolbarDemo\ToolbarDemo\ToolbarDemo.csproj", "{F66B6544-2A54-4966-80BA-75491C87EEE9}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "6 Navigation", "6 Navigation", "{5FCCE29D-F638-4D67-A7C0-D4D22CEC93CF}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "06 Navigation", "06 Navigation", "{5FCCE29D-F638-4D67-A7C0-D4D22CEC93CF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstagramLike.Android", "InstagramLike\InstagramLike.Android\InstagramLike.Android.csproj", "{B41D0926-73A4-46BD-909B-34A40CD2B1EC}"
 EndProject
@@ -145,7 +145,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InstagramLike.iOS", "Instag
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InstagramLike", "InstagramLike\InstagramLike\InstagramLike.csproj", "{FC87BED0-2BFE-40A7-83BE-C46CAF372031}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "7 Forms", "7 Forms", "{0F40E47C-2B09-40BF-BDD8-6033F9BA1F70}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "07 Forms", "07 Forms", "{0F40E47C-2B09-40BF-BDD8-6033F9BA1F70}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsControls.Android", "FormsControls\FormsControls.Android\FormsControls.Android.csproj", "{E452FF8E-DEE3-4496-BAEA-5FF138CEB827}"
 EndProject
@@ -159,7 +159,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook.iOS", "ContactB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBook", "ContactBook\ContactBook\ContactBook.csproj", "{8E305BB1-1CB1-40E8-AD57-2DB759C8B3F0}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "8 Data Access", "8 Data Access", "{2C739645-F7BD-43E4-BF00-FC7FC89D9909}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "08 Data Access", "08 Data Access", "{2C739645-F7BD-43E4-BF00-FC7FC89D9909}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contact Book with SQLite.Android", "Contact Book with SQLite\Contact Book with SQLite.Android\Contact Book with SQLite.Android.csproj", "{E15DFAF1-466D-42B2-BC22-5E7A944B4AA3}"
 EndProject
@@ -167,7 +167,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Contact Book with SQLite.iO
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Contact Book with SQLite", "Contact Book with SQLite\Contact Book with SQLite\Contact Book with SQLite.csproj", "{E62BC4FD-6269-4AB4-9389-9A48FECBF902}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 MVVM", "9 MVVM", "{2FE09CF5-9431-46ED-BD34-A3113F83712B}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09 MVVM", "09 MVVM", "{2FE09CF5-9431-46ED-BD34-A3113F83712B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaylistManager.Android", "PlaylistManager\PlaylistManager.Android\PlaylistManager.Android.csproj", "{1F63046B-32AB-4E23-9D4F-8C1F376F91DB}"
 EndProject
@@ -175,13 +175,15 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaylistManager.iOS", "Play
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PlaylistManager", "PlaylistManager\PlaylistManager\PlaylistManager.csproj", "{DA81290D-170B-4437-BC34-ACD71647EC78}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "9 MVVM", "9 MVVM", "{81A4EA66-8952-4756-ACA2-1641085AE4ED}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "09 MVVM", "09 MVVM", "{81A4EA66-8952-4756-ACA2-1641085AE4ED}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook MVVM.Android", "ContactBook MVVM\ContactBook MVVM.Android\ContactBook MVVM.Android.csproj", "{60EC12BB-EDFA-4D1D-8884-C2679B1DA6E2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook MVVM.iOS", "ContactBook MVVM\ContactBook MVVM.iOS\ContactBook MVVM.iOS.csproj", "{1717661E-808B-4CBD-A228-C76F8BB1C0FA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ContactBook MVVM", "ContactBook MVVM\ContactBook MVVM\ContactBook MVVM.csproj", "{D145AEB2-2196-452A-94BE-698F75DC4535}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ContactBook MVVM", "ContactBook MVVM\ContactBook MVVM\ContactBook MVVM.csproj", "{D145AEB2-2196-452A-94BE-698F75DC4535}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "10 Beyond the basics", "10 Beyond the basics", "{7445121C-3010-4DD4-A2A8-AB8BC0BAC1B8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -1123,6 +1125,7 @@ Global
 		{60EC12BB-EDFA-4D1D-8884-C2679B1DA6E2} = {81A4EA66-8952-4756-ACA2-1641085AE4ED}
 		{1717661E-808B-4CBD-A228-C76F8BB1C0FA} = {81A4EA66-8952-4756-ACA2-1641085AE4ED}
 		{D145AEB2-2196-452A-94BE-698F75DC4535} = {81A4EA66-8952-4756-ACA2-1641085AE4ED}
+		{7445121C-3010-4DD4-A2A8-AB8BC0BAC1B8} = {F489FBD8-11AE-408F-A0FA-865AE63EC54D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {D2EA9D3A-F058-42BC-993D-DCECCC36DFF5}
