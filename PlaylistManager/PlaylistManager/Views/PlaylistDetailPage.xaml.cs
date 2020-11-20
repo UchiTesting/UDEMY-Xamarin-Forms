@@ -16,9 +16,6 @@ namespace PlaylistManager.Views
 	{
 		private PlayListVM _playlist;
 
-		public event EventHandler<PlayListVM> UpdatedPlaylist;
-		//public event EventHandler AddedPlaylist;
-
 		public PlaylistDetailPage(PlayListVM playlist)
 		{
 			_playlist = playlist;

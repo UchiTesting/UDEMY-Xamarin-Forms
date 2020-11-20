@@ -4,12 +4,20 @@ using PlaylistManager.Views;
 using System;
 using System.Collections.ObjectModel;
 using System.Threading.Tasks;
+using System.Windows.Input;
+
+using Xamarin.Forms;
 
 namespace PlaylistManager.VMs
 {
 	public class MainPageVM : INPCImpl
 	{
 		private readonly IPageService _pageService;
+
+		#region ICommand implementation
+		public ICommand AddPlaylistCommand { get; private set; }
+		public ICommand SelectPlaylistCommand { get; private set; }
+		#endregion
 
 		ObservableCollection<PlayListVM> playLists;
 		public ObservableCollection<PlayListVM> PlayLists
@@ -25,13 +33,13 @@ namespace PlaylistManager.VMs
 			set => SetValue(ref selectedPlaylist, value);
 		}
 
-		public void AddPlayList()
+		private void AddPlayList()
 		{
 			var newPlaylist = new PlayListVM { Title = $"Playlist {DateTime.Now:G}", IsFavourited = false };
 			playLists.Add(newPlaylist);
 		}
 
-		public async Task PlaylistTapped(PlayListVM p)
+		private async Task PlaylistTapped(PlayListVM p)
 		{
 			if (p == null) return;
 
@@ -56,6 +64,8 @@ namespace PlaylistManager.VMs
 		{
 			_pageService = pageService;
 			PlayLists = new ObservableCollection<PlayListVM>();
+			AddPlaylistCommand = new Command(AddPlayList);
+			SelectPlaylistCommand = new Command<PlayListVM>(async vm => await PlaylistTapped(vm));
 		}
 	}
 }

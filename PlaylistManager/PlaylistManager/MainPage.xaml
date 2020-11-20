@@ -4,7 +4,8 @@
              Title="{Binding Path=PlayLists.Count,StringFormat='{0} playlists'}"
              x:Class="PlaylistManager.MainPage">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddPlaylist_Clicked" />
+        <!--<ToolbarItem Text="Add" Clicked="AddPlaylist_Clicked" /> Before using ICommand -->
+        <ToolbarItem Text="Add" Command="{Binding AddPlaylistCommand}"/>
     </ContentPage.ToolbarItems>
     <ListView 
         ItemsSource="{Binding PlayLists}" 

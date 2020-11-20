@@ -10,9 +10,11 @@ namespace PlaylistManager
 {
 	public partial class MainPage : ContentPage
 	{
+		public MainPageVM ViewModel { get => BindingContext as MainPageVM; set => BindingContext = value; }
 		public MainPage()
 		{
-			BindingContext = new MainPageVM(new PageService());
+			// Can replace BindingContext property as it is setting it.
+			ViewModel = new MainPageVM(new PageService());
 
 			InitializeComponent();
 		}
@@ -22,10 +24,7 @@ namespace PlaylistManager
 			base.OnAppearing();
 		}
 
-		private void AddPlaylist_Clicked(object sender, EventArgs e)
-			=> (BindingContext as MainPageVM).AddPlayList();
-
-		private async void PlaylistItem_Tapped(object sender, ItemTappedEventArgs e)
-			=> await (BindingContext as MainPageVM).PlaylistTapped(e.Item as PlayListVM);
+		private void PlaylistItem_Tapped(object sender, ItemTappedEventArgs e)
+			=> ViewModel.SelectPlaylistCommand.Execute(e.Item);
 	}
 }
