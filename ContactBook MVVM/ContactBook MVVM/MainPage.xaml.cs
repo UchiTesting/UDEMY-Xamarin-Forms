@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
-namespace ContactBook_MVVM
+namespace ContactBookMVVM
 {
 	public partial class MainPage : ContentPage
 	{

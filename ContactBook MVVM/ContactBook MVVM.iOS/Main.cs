@@ -5,7 +5,7 @@ using System.Linq;
 using Foundation;
 using UIKit;
 
-namespace ContactBook_MVVM.iOS
+namespace ContactBookMVVM.iOS
 {
     public class Application
     {

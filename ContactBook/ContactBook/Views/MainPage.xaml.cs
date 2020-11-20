@@ -1,12 +1,12 @@
 ﻿
-using ContactBook.Models;
+using ContactBookMVVM.Models;
 
 using System.Collections.ObjectModel;
 using System.Linq;
 
 using Xamarin.Forms;
 
-namespace ContactBook.Views
+namespace ContactBookMVVM.Views
 {
 	public partial class MainPage : ContentPage
 	{

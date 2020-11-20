@@ -2,9 +2,9 @@
 
 namespace ContactBookMVVM.Persistence
 {
-	public interface ISQLiteDb
-	{
-		SQLiteAsyncConnection GetConnection();
-	}
+    public interface ISQLiteDb
+    {
+        SQLiteAsyncConnection GetConnection();
+    }
 }
 

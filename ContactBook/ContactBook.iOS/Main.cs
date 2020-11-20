@@ -1,6 +1,6 @@
 ﻿using UIKit;
 
-namespace ContactBook.iOS
+namespace ContactBookMVVM.iOS
 {
 	public class Application
 	{

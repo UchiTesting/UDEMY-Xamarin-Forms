@@ -5,7 +5,7 @@ using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ContactBook_MVVM
+namespace ContactBookMVVM
 {
 	public partial class App : Application
 	{

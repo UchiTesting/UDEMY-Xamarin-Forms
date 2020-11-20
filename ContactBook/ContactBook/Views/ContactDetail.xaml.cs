@@ -1,11 +1,11 @@
-﻿using ContactBook.Models;
+﻿using ContactBookMVVM.Models;
 
 using System;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace ContactBook.Views
+namespace ContactBookMVVM.Views
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ContactDetail : ContentPage

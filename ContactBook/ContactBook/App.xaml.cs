@@ -1,8 +1,8 @@
-﻿using ContactBook.Views;
+﻿using ContactBookMVVM.Views;
 
 using Xamarin.Forms;
 
-namespace ContactBook
+namespace ContactBookMVVM
 {
 	public partial class App : Application
 	{
