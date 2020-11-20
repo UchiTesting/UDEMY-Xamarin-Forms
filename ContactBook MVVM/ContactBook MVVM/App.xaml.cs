@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ContactBookMVVM;
+
+using System;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -11,7 +13,8 @@ namespace ContactBook_MVVM
 		{
 			InitializeComponent();
 
-			MainPage = new MainPage();
+			//MainPage = new MainPage();
+			MainPage = new NavigationPage(new ContactsPage());
 		}
 
 		protected override void OnStart()
