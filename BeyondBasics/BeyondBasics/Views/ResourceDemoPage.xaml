@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             NavigationPage.HasNavigationBar="False"
+             x:Class="BeyondBasics.Views.ResourceDemoPage">
+    <!--<ContentPage.Resources>
+        -->
+    <!-- Supercedes Resources at App level -->
+    <!--
+        <ResourceDictionary>
+            <x:Int32 x:Key="borderRadius">20</x:Int32>
+            <Color x:Key="buttonBgColour">Gray</Color>
+            <Color x:Key="buttonFgColour">White</Color>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
+    <StackLayout>
+        <!--<StackLayout.Resources>
+            -->
+        <!-- Supercedes Resources at App and Page level -->
+        <!--
+            <ResourceDictionary>
+                <x:Int32 x:Key="borderRadius">20</x:Int32>
+                <Color x:Key="buttonBgColour">Gray</Color>
+                <Color x:Key="buttonBackgroundColour">Gray</Color>
+                <Color x:Key="buttonFgColour">White</Color>
+            </ResourceDictionary>
+        </StackLayout.Resources>-->
+        <!-- When we will click on the button the colour will remain the same because static resources are loaded
+        once at load time.
+        -->
+        <Button Text="Login" BackgroundColor="{StaticResource buttonBgColour}" TextColor="{StaticResource buttonFgColour}" BorderRadius="{StaticResource borderRadius}" FontAttributes="Bold" />
+        <!-- When we will click on the button the colour can be updated for 
+        dynamic resources can be updated at runtime -->
+        <Button Text="Register" BackgroundColor="{DynamicResource buttonBgColour}" TextColor="{StaticResource buttonFgColour}" BorderRadius="{StaticResource borderRadius}" FontAttributes="Bold" />
+
+        <Button Text="Styled btn1" Style="{StaticResource buttonStyle}" />
+        <Button Text="Styled btn2" Style="{StaticResource buttonStyle}" />
+        <Button Text="Styled btn3" Style="{StaticResource primaryButton}" />
+
+        <Button Text="Change colour" Clicked="ChangeColour_Clicked" />
+    </StackLayout>
+</ContentPage>
