@@ -191,7 +191,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeyondBasics.Android", "Bey
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeyondBasics.iOS", "BeyondBasics\BeyondBasics.iOS\BeyondBasics.iOS.csproj", "{40337C82-95A2-4EF4-9BC6-72DBB8F5C218}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeyondBasics", "BeyondBasics\BeyondBasics\BeyondBasics.csproj", "{DB9CC9AE-1DDA-4767-8DAB-AC8323A15DAE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeyondBasics", "BeyondBasics\BeyondBasics\BeyondBasics.csproj", "{DB9CC9AE-1DDA-4767-8DAB-AC8323A15DAE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "md", "md", "{93962E6E-D0DF-4EBF-8BEB-5174E59BAA69}"
+	ProjectSection(SolutionItems) = preProject
+		md\GettingStarted.md = md\GettingStarted.md
+		md\Notes.md = md\Notes.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
