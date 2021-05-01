@@ -197,6 +197,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "md", "md", "{93962E6E-D0DF-
 	ProjectSection(SolutionItems) = preProject
 		md\GettingStarted.md = md\GettingStarted.md
 		md\Notes.md = md\Notes.md
+		md\XamlEssentials.md = md\XamlEssentials.md
 	EndProjectSection
 EndProject
 Global
