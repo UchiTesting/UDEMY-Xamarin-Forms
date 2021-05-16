@@ -195,7 +195,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BeyondBasics", "BeyondBasic
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "md", "md", "{93962E6E-D0DF-4EBF-8BEB-5174E59BAA69}"
 	ProjectSection(SolutionItems) = preProject
+		md\Controls.md = md\Controls.md
 		md\GettingStarted.md = md\GettingStarted.md
+		md\Layouts.md = md\Layouts.md
 		md\Notes.md = md\Notes.md
 		md\XamlEssentials.md = md\XamlEssentials.md
 	EndProjectSection
