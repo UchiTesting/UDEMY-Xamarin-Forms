@@ -115,3 +115,58 @@ grid.ColumnDefinitions.Add( new ColumnDefinition{
 	Width = new GridLength(1, GridUnitType.Auto);
 });
 ```
+
+## Absolute Layout
+
+Provides more control on the layout such as overlay and anchoring elements to borders. Its sizing may adapt to the device. As the previous layouts it fills its container.
+
+Similar to `<Grid>` we are given Attached Bindable Properties. Each control into the layout can use them to define their aspect and position. 
+
+First, there is `AbsoluteLayout.LayoutBounds`  which takes 4 numbers. Respectively x coordinate, y coordinate, width and height. They can be absolute or proportional values. Proportional values are represented by double values between 0 and 1.
+
+Second there is `AbsoluteLayout.LayoutFlags` which is there to tell if any value provided to the previous property are proportional. It can take one of the following values or a comma separated combination of them:
+
+| Value | Description |
+|---|---|
+| None | All values are absolute. |
+| All | All values are proportional. |
+| WidthProportional | Width (3rd value) is proportional |
+| HeightProportional | Height (4th value) is proportional |
+| XProportional | X coordinate (1st value) is proportional. |
+| YProportional | Y coordinate (2nd value) is propotional. |
+| PositionProportional | X and Y are proportional. |
+| SizeProportional | Width and Height are proportional. |
+
+Example of combination
+```xml
+<button Text="OK" 
+	AbsoluteLayout.LayoutBounds="0,1,1,50"
+	AbsoluteLayout.LayoutFlags="PositionProportional, WidthProportional"
+	/>
+```
+A proportional value of 1 on the Y coordinate ensures the button is at the far bottom of the page.
+
+### Code-behind
+
+We set an absolute layout and a control for demonstration.
+
+```csharp
+var layout = new AbsoluteLayout();
+
+var aquaBox = new BoxView{ Color=Color.Aqua };
+```
+
+Then we link the two as usual with the `Chidren` property. The `Add()` method takes the control to be added, a `Rectangle` object which parameters respect the order presented above (X, Y, Width, Height) and flags to define which values in the `Rectangle` object are proportional.
+
+```csharp
+layout.Children.Add(aquaBox, 
+	new Rectangle(0,0,1,1),
+	AbsoluteLayoutFlags.All);
+```
+
+We also have static method to redefine any of the bounds or flags at runtime.
+
+```csharp
+AbsoluteLayout.SetLayoutBounds(aquaBox, new Rectangle(0,0,1,1));
+AbsoluteLayout.SetLayoutFlags(aquaBox, AbsoluteLayoutFlags.HeightProportional);
+```
