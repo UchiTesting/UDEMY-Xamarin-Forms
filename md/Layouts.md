@@ -170,3 +170,56 @@ We also have static method to redefine any of the bounds or flags at runtime.
 AbsoluteLayout.SetLayoutBounds(aquaBox, new Rectangle(0,0,1,1));
 AbsoluteLayout.SetLayoutFlags(aquaBox, AbsoluteLayoutFlags.HeightProportional);
 ```
+
+## Relative Layout
+
+Similarly to Absolute Layout can overlay elements. Contraints can be based on another element. Gives more control about position and size of elements. 
+Uses bindable properties:
+
+- XConstraint
+- YConstraint
+- WidthConstraints
+- HeightConstraints
+- BoundsConstraints
+
+Values are **constraint expression**.
+
+```xml
+<BoxView Color="Aqua" x:Name="banner"
+	RelativeLayout.WidthConstraint="{ConstraintExpression 
+		Type=RelativeToParent,
+		Property=Width,
+		Factor=1}"
+
+	RelativeLayout.HeightConstraint="{ConstraintExpression
+		Type=RelativeToParent,
+		Property=Height,
+		Factor=0.3	}"
+/>
+
+<BoxView Color="Silver"
+	RelativeLayout.YConstraint="{ConstraintExpression
+		Type=RelativeToView,
+		ElementName=banner,
+		Property=Height,
+		Factor=1,
+		Constant=20}"
+/>
+```
+
+### Code-behind
+
+```csharp
+var layout = new relativeLayout();
+var aquaBox = new BoxView {Color = Color.Aqua };
+
+layout.Children.Add(aquaBox,
+	widthConstraint: Constraint.RelativeToParent(parent => parent.Width),
+	heightConstraint: Constraint.RelativeToParent(parent => parent.Height * 0.3));
+
+var silverBox = new BoxView {Color = Color.Silver };
+
+layout.Children.Add( silverBox,
+	yConstraint: Constraint.RelativeToView(aquaBox, (RelativeLayout, element) => element.Height +20);
+);
+```
