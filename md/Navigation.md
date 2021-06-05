@@ -64,9 +64,73 @@ protected override bool OnBackButtonPressed(){
 
 ## Modal pages
 
+Modal pages are pages that the user cannot remove outside of the planned ways.
+The navigation bar is no more. Therefore we need to dev a button explicitely to exit it.
+
+```csharp
+await Navigation.PushModalAsync();
+```
+
+Goes along with `PopModalAsync()` and `OnBackButtonPressed` disabled.
+
 ## Simple Master Detail
 
+This is made out of classic views. One holding a `<ListView>` in which we handle the `ItemSelected` event to display the correct page.	
+
+The problem that occurs is we need to pass the selected item to the view.
+
+Several ways:
+- Use a constructor that takes the selected Item. `new TargetPage(content)`
+- Use a property that is set inline. `new TargetPage{Content = content}`
+- Set the binding context inline. `new TargetPage{BindingContext = content}`
+
+The best option is constructor. The other options are poor from OOP perspective. The target page does not hold the passed element so it should be provided at initialisation. Hence method one via constructors.
+
+On the target page we shall check the argument is not null or `throw new ArgumentNullException()`.
+
+At `App.cs` it needs `NavigationPage` use.
+
+```csharp
+async void Handle_SelectedItem(object sender, SelectedItemChanged e){
+	if (e.SelectedItem is null) return; // The last satement sets SelectedItem to null. But retriggers the event. This prevents unexpected behaviours such as loops.
+
+	var data = e.SelectedItem as TargetType;
+	await Navigation.PushAsync(new TargetPage(data));
+	listView.SelectedItem = null // This is because when we come back the last selected item is still selected. So this acts as a reset.
+	
+	
+}
+```
+
 ## Master Detail
+
+Xamarin have a specific `MasterDetailPage` that is visually a bit different from the previous implementation.
+On Mobile it shows a preview (a few pixels in width available on the screen) before showing the full detail page. On tablet, the screen is wide enough to display the full detail page. Hence it looks like tabs on the left-hand border.
+
+`MasterDetailPage` has 2 properties of type `Page` letting it set the `Master` and `Detail` pages to be displayed.
+
+Master can be set using PES (Property Element Syntax) so that there is no extra page to deal with.
+
+The detail page though will be likely set dynamically and therefore dealt with in the code-behind. It cannot be empty though so  in XAML it must be set to an empty `ContentPage`. Also it should be wrapped into a `NavigationPage` for it has no mechanism to browse back by default.
+
+```xml
+<MasterDetailPage>
+<MasterDetailPage.Master>
+</MasterDetailPage.Master>
+<MasterDetailPage.Detail>
+	<ContentPage />
+</MasterDetailPage.Detail>
+</MasterDetailPage>
+```
+
+```csharp
+async void Handle_SelectedItem(object sender, SelectedItemChanged e){
+	var data = e.SelectedItem as TargetType;
+	Detail = new TargetPage(data);	
+	IsPresented = false;
+}
+```
+`IsPresented` allows to hide the Master part of the view when an item has been selected when set to `false`. In XAML however it shall be set to `true`.
 
 ## Tabbed Page
 
