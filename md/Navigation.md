@@ -134,6 +134,51 @@ async void Handle_SelectedItem(object sender, SelectedItemChanged e){
 
 ## Tabbed Page
 
+It has a `Children` property of type `IList<Page>` to which we can add.
+
+In XAML we can put the code directly in the source.
+
+```xml
+<TabbedPage>
+	<ContentPage Title="TabTitle" Icon="Image.png">
+	 Markup Here
+	</ContentPage>
+</TabbedPage>
+```
+
+It takes a `Title` and `Icon`. The latter shall be 30×30 pixels.
+
+Pages displayed as tabs are likely to be complex enough to benefit from being in their own source files. So instead of doing the above, we can just reference the pages to display.
+
+This means putting an `xmlns` reference to the namespace where pages are located.
+
+> In that matter I love to put Pages in a folder called `Views` and name the `xmlns` **v** or **views**.  
+> One of the first things I do when I start a XAML project is to move the main page to that folder and update `App.cs` with the correct reference.
+
+```xml
+<TabbedPage 
+	xmlns:v="clr-namespace:Proper.Namespace.Views">
+	<v:ContentPage Title="TabTitle" Icon="Image.png" />
+	<v:AnotherContentPage Title="Another" Icon="Another.png" />
+</TabbedPage>
+```
+
+Should we wish to wrap a content page in `NavigationPage` from XAML, we would get an error if we'd simply do it. This is because it needs a root page to display.  In C# code we pass that page as an argument.
+
+```xml
+<TabbedPage 
+	xmlns:v="clr-namespace:Proper.Namespace.Views">
+	<NavigationPage Title="TabTitle" Icon="Image.png">
+		<x:Arguments>
+			<v:ContentPage />
+		<x:Arguments>
+	</NavigationPage>
+	<v:AnotherContentPage Title="Another" Icon="Another.png" />
+</TabbedPage>
+```
+
+> We shall not forget that it is the `NavigationPage that shall be set the `Title` and `Icon` properties.
+
 ## Carousel Page
 
 ## Pop-ups
