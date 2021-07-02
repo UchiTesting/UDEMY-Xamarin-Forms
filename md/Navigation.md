@@ -207,6 +207,19 @@ var response = await DisplayActionSheet("Title","Cancel","Delete", strings[]);
 ```
 
 It will return a `string` of the tapped label.
+
 ## Toolbars
 
-## Bonus : Display pop-ups
+Use of Toolbars imply use of navigation page. Otherwise there is no toolbar displayed at all.
+
+To add toolbar items we use <abbr title="Property Element Syntax">PES</abbr>
+
+`Text` is shown with secondary items.
+`Activated` is an event handler.
+`Order` can have values either `Primary` or `Secondary`
+```xml
+<ContentPage.ToolbarItems>
+	<ToolbarItem Icon="icon.png" Text="New" Activated="Handle_Activated" Order="Primary"/>
+	<ToolbarItem Icon="icon.png" Text="New" Activated="Handle_Activated" Order="Secondary"/>
+</ContentPage.ToolbarItems>
+```
