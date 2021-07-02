@@ -181,6 +181,19 @@ Should we wish to wrap a content page in `NavigationPage` from XAML, we would ge
 
 ## Carousel Page
 
+`CarouselPage` and `TabbedPage` are very similar.
+
+The difference is in the `Children` property.
+
+`TabbedPage` has a list of `Page` while `CarouselPage` has a list on `ContentPage`.
+
 ## Pop-ups
 
 ## Toolbars
+
+## Bonus : Display pop-ups
+
+```csharp
+await DisplayAlert("Title","Message","OK");
+bool answer = await DisplayAlert("Title","Message","OK","Cancel");
+```
