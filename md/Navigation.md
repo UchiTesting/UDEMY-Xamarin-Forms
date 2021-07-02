@@ -189,11 +189,24 @@ The difference is in the `Children` property.
 
 ## Pop-ups
 
-## Toolbars
+A classic pop up can be obtained in several manners.
 
-## Bonus : Display pop-ups
+With `DisplayAlert()`.
 
 ```csharp
 await DisplayAlert("Title","Message","OK");
 bool answer = await DisplayAlert("Title","Message","OK","Cancel");
 ```
+
+Or with `DisplayActionSheet()`
+
+3<sup>rd</sup> parameter is if the operation is destructive. The button will be displayed with another styling. Otherwise can be set to `null`.  
+4<sup>th</sup> argument is an array of strings that represent the possible options. It can be a list of string parameters also.
+```csharp
+var response = await DisplayActionSheet("Title","Cancel","Delete", strings[]);
+```
+
+It will return a `string` of the tapped label.
+## Toolbars
+
+## Bonus : Display pop-ups
